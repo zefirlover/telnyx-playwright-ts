@@ -82,4 +82,120 @@ test.describe('main page testing', () => {
         await mainPage.clickTruckingCard();
         await expect(mainPage.elasticSipPricingLink).toBeVisible();
     })
+
+    test(`TNP-10 Verify the 'Explore our products' button in 'Powerful products' cards table works`, async ({ page }) => {
+        const mainPage = new MainPage(page);
+        await Helpers.goToPowerfulProducts(page);
+        await expect(mainPage.exploreProductsButton).toBeVisible();
+        await mainPage.clickExploreProductsButton();
+        await expect(mainPage.productFaxLink).toBeVisible();
+    })
+
+    test(`TNP-12 Verify the 'Elastic SIP Trunking' link in 'Products' tab dropdownlist works`, async ({ page }) => {
+        const mainPage = new MainPage(page);
+        const header = new Header(page);
+        await mainPage.checkCookiesMessageBox();
+        await expect(header.productsLink).not.toBeVisible();
+        await expect(header.productsSpan).toBeVisible();
+        await header.clickProduct();
+        await expect(header.truckingLink).toBeVisible();
+        await header.clickTrucking();
+        await expect(mainPage.elasticSipPricingLink).toBeVisible();
+    })
+
+    test(`TNP-11 Verify the 'See all products' link in 'Products' tab dropdownlist works`, async ({ page }) => {
+        const mainPage = new MainPage(page);
+        const header = new Header(page);
+        await mainPage.checkCookiesMessageBox();
+        await expect(header.productsLink).not.toBeVisible();
+        await expect(header.productsSpan).toBeVisible();
+        await header.clickProduct();
+        await expect(header.productsLink).toBeVisible();
+        await header.clickProductLink();
+        await expect(mainPage.productFaxLink).toBeVisible();
+    })
+
+    test(`TNP-13 Verify the 'Voice API' link in 'Products' tab dropdownlist works`, async ({ page }) => {
+        const mainPage = new MainPage(page);
+        const header = new Header(page);
+        await mainPage.checkCookiesMessageBox();
+        await expect(header.voiceApiLink).not.toBeVisible();
+        await expect(header.productsSpan).toBeVisible();
+        await header.clickProduct();
+        await expect(header.voiceApiLink).toBeVisible();
+        await header.clickVoiceApiLink();
+        await expect(mainPage.callControlGuideLink).toBeVisible();
+    })
+
+    test(`TNP-14 Verify the 'SMS API' link in 'Products' tab dropdownlist works`, async ({ page }) => {
+        const mainPage = new MainPage(page);
+        const header = new Header(page);
+        await mainPage.checkCookiesMessageBox();
+        await expect(header.smsApiLink).not.toBeVisible();
+        await expect(header.productsSpan).toBeVisible();
+        await header.clickProduct();
+        await expect(header.smsApiLink).toBeVisible();
+        await header.clickSmsApiLink();
+        await expect(mainPage.smsPricingLink).toBeVisible();
+    })
+
+    test(`TNP-15 Verify the 'Wireless' link in 'Products' tab dropdownlist works`, async ({ page }) => {
+        const mainPage = new MainPage(page);
+        const header = new Header(page);
+        await mainPage.checkCookiesMessageBox();
+        await expect(header.wirelessLink).not.toBeVisible();
+        await expect(header.productsSpan).toBeVisible();
+        await header.clickProduct();
+        await expect(header.wirelessLink).toBeVisible();
+        await header.clickWirelessLink();
+        await expect(mainPage.simPointsOfSaleLink).toBeVisible();
+    })
+
+    test(`TNP-16 Verify the 'Number Lookup' link in 'Products' tab dropdownlist works`, async ({ page }) => {
+        const mainPage = new MainPage(page);
+        const header = new Header(page);
+        await mainPage.checkCookiesMessageBox();
+        await expect(header.numberLookupLink).not.toBeVisible();
+        await expect(header.productsSpan).toBeVisible();
+        await header.clickProduct();
+        await expect(header.numberLookupLink).toBeVisible();
+        await header.clickNumberLookupLink();
+        await expect(mainPage.numberLookupTermsLink).toBeVisible();
+    })
+
+    test(`TNP-17 Verify the 'Global Numbers' link in 'Products' tab dropdownlist works`, async ({ page }) => {
+        const mainPage = new MainPage(page);
+        const header = new Header(page);
+        await mainPage.checkCookiesMessageBox();
+        await expect(header.globalNumbersLink).not.toBeVisible();
+        await expect(header.productsSpan).toBeVisible();
+        await header.clickProduct();
+        await expect(header.globalNumbersLink).toBeVisible();
+        await header.clickGlobalNumbersLink();
+        await expect(mainPage.callForwadingCard).toBeVisible();
+    })
+
+    test(`TNP-18 Verify the 'Video API' link in 'Products' tab dropdownlist works`, async ({ page }) => {
+        const mainPage = new MainPage(page);
+        const header = new Header(page);
+        await mainPage.checkCookiesMessageBox();
+        await expect(header.videoApiLink).not.toBeVisible();
+        await expect(header.productsSpan).toBeVisible();
+        await header.clickProduct();
+        await expect(header.videoApiLink).toBeVisible();
+        await header.clickVideoApiLink();
+        await expect(mainPage.wikiVideoApiLink).toBeVisible();
+    })
+
+    test(`TNP-19 Verify the 'WhatsApp Business API' link in 'Products' tab dropdownlist works`, async ({ page }) => {
+        const mainPage = new MainPage(page);
+        const header = new Header(page);
+        await mainPage.checkCookiesMessageBox();
+        await expect(header.whatsappApiLink).not.toBeVisible();
+        await expect(header.productsSpan).toBeVisible();
+        await header.clickProduct();
+        await expect(header.whatsappApiLink).toBeVisible();
+        await header.clickWhatsappApiLink();
+        await expect(mainPage.whatsappPricingLink).toBeVisible();
+    })
 })

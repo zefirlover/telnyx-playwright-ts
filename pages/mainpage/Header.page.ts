@@ -12,6 +12,14 @@ export class Header {
     readonly resourcesLink: Locator;
     readonly companyLink: Locator;
     readonly pricingLink: Locator;
+    readonly truckingLink: Locator;
+    readonly voiceApiLink: Locator;
+    readonly smsApiLink: Locator;
+    readonly wirelessLink: Locator;
+    readonly numberLookupLink: Locator;
+    readonly globalNumbersLink: Locator;
+    readonly videoApiLink: Locator;
+    readonly whatsappApiLink: Locator;
 
     constructor(page: Page) {
         this.page = page;
@@ -25,6 +33,14 @@ export class Header {
         this.resourcesLink = page.locator('a[href="/resources"]').nth(0);
         this.companyLink = page.locator('a[href="/company"]');
         this.pricingLink = page.locator('a[href="/pricing"]');
+        this.truckingLink = page.locator('a[href="/products/sip-trunks"]').nth(0);
+        this.voiceApiLink = page.locator('a[href="/products/voice-api"]').nth(0);
+        this.smsApiLink = page.locator('a[href="/products/sms-api"]').nth(0);
+        this.wirelessLink = page.locator('a[href="/products/iot-sim-card"]').nth(0);
+        this.numberLookupLink = page.locator('a[href="/number-lookup"]').nth(0);
+        this.globalNumbersLink = page.locator('a[href="/products/phone-numbers"]').nth(0);
+        this.videoApiLink = page.locator('a[href="/products/video"]').nth(0);
+        this.whatsappApiLink = page.locator('a[href="/products/whatsapp-api"]').nth(0);
     }
 
     async clickProduct() {
@@ -45,5 +61,41 @@ export class Header {
 
     async clickPricing() {
         await this.pricingSpan.click();
+    }
+
+    async clickTrucking() {
+        await this.truckingLink.click();
+    }
+
+    async clickProductLink() {
+        await this.productsLink.click();
+    }
+
+    async clickVoiceApiLink() {
+        await this.voiceApiLink.click();
+    }
+
+    async clickSmsApiLink() {
+        await this.smsApiLink.click();
+    }
+
+    async clickWirelessLink() {
+        await this.wirelessLink.click();
+    }
+
+    async clickNumberLookupLink() {
+        await this.numberLookupLink.click();
+    }
+
+    async clickGlobalNumbersLink() {
+        await this.globalNumbersLink.click();
+    }
+
+    async clickVideoApiLink() {
+        await this.videoApiLink.click();
+    }
+
+    async clickWhatsappApiLink() {
+        await this.whatsappApiLink.click();
     }
 }

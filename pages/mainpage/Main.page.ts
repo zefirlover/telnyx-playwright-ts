@@ -16,6 +16,11 @@ export class MainPage {
     readonly simPointsOfSaleLink: Locator;
     readonly callControlGuideLink: Locator;
     readonly elasticSipPricingLink: Locator;
+    // not in main page, change later, maybe
+    readonly exploreProductsButton: Locator;
+    readonly productFaxLink: Locator;
+    readonly numberLookupTermsLink: Locator;
+    readonly callForwadingCard: Locator;
 
     constructor(page: Page) {
         this.page = page;
@@ -33,6 +38,10 @@ export class MainPage {
         this.simPointsOfSaleLink = page.locator('a[href*="sim-card/point-of-sale"]');
         this.callControlGuideLink = page.locator('a[href*="/call-control/quickstart"]').nth(0);
         this.elasticSipPricingLink = page.locator('a[href="/pricing/elastic-sip"]').nth(1);
+        this.exploreProductsButton = page.locator('a[href="/products"]').nth(1);
+        this.productFaxLink = page.locator('a[href="/products/fax-api"]').nth(0);
+        this.numberLookupTermsLink = page.locator('a[href="#number-lookup-terms"]');
+        this.callForwadingCard = page.locator('a[href*="call-forwarding"]');
     }
 
     async visit() {
@@ -65,6 +74,10 @@ export class MainPage {
 
     async clickTruckingCard() {
         await this.truckingCard.click();
+    }
+
+    async clickExploreProductsButton() {
+        await this.exploreProductsButton.click();
     }
 
     async checkCookiesMessageBox() {
