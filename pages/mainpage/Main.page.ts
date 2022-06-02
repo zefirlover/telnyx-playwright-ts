@@ -21,6 +21,7 @@ export class MainPage {
     readonly productFaxLink: Locator;
     readonly numberLookupTermsLink: Locator;
     readonly callForwadingCard: Locator;
+    readonly signUpButton: Locator;
 
     constructor(page: Page) {
         this.page = page;
@@ -42,6 +43,7 @@ export class MainPage {
         this.productFaxLink = page.locator('a[href="/products/fax-api"]').nth(0);
         this.numberLookupTermsLink = page.locator('a[href="#number-lookup-terms"]');
         this.callForwadingCard = page.locator('a[href*="call-forwarding"]');
+        this.signUpButton = page.locator('a[href="/sign-up"]').nth(1);
     }
 
     async visit() {
@@ -78,6 +80,10 @@ export class MainPage {
 
     async clickExploreProductsButton() {
         await this.exploreProductsButton.click();
+    }
+
+    async clickSignUpButton() {
+        await this.signUpButton.click();
     }
 
     async checkCookiesMessageBox() {
