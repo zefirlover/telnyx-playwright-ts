@@ -203,4 +203,26 @@ test.describe('main page testing', () => {
         await expect(signUpPage.emailInput).toBeVisible();
         await expect(signUpPage.emailInput).toHaveValue(randomEmail)
     })
+
+    test('TNP-27 Test the email input in Email Form with incorrect data',async ({ page }) => {
+        const mainPage = new MainPage(page);
+        await expect(mainPage.emailInput).toBeVisible();
+        await expect(mainPage.tryForFreeButton).toBeVisible();
+        await mainPage.emailInput.fill('testAtgmail.com');
+        await mainPage.clickTryForFreeButton();
+        await expect(mainPage.emailInput).toBeVisible();
+        await expect(mainPage.tryForFreeButton).toBeVisible();
+        await mainPage.emailInput.fill('test@gmailcom');
+        await mainPage.clickTryForFreeButton();
+        await expect(mainPage.emailInput).toBeVisible();
+        await expect(mainPage.tryForFreeButton).toBeVisible();
+        await mainPage.emailInput.fill('test@gmail');
+        await mainPage.clickTryForFreeButton();
+        await expect(mainPage.emailInput).toBeVisible();
+        await expect(mainPage.tryForFreeButton).toBeVisible();
+        await mainPage.emailInput.fill('@gmail');
+        await mainPage.clickTryForFreeButton();
+        await expect(mainPage.emailInput).toBeVisible();
+        await expect(mainPage.tryForFreeButton).toBeVisible();
+    })
 })
