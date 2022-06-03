@@ -22,6 +22,8 @@ export class MainPage {
     readonly numberLookupTermsLink: Locator;
     readonly callForwadingCard: Locator;
     readonly signUpButton: Locator;
+    readonly emailInput: Locator;
+    readonly tryForFreeButton: Locator;
 
     constructor(page: Page) {
         this.page = page;
@@ -44,6 +46,8 @@ export class MainPage {
         this.numberLookupTermsLink = page.locator('a[href="#number-lookup-terms"]');
         this.callForwadingCard = page.locator('a[href*="call-forwarding"]');
         this.signUpButton = page.locator('a[href="/sign-up"]').nth(1);
+        this.emailInput = page.locator('input[type="email"]');
+        this.tryForFreeButton = page.locator('button[type="submit"]');
     }
 
     async visit() {
@@ -86,9 +90,13 @@ export class MainPage {
         await this.signUpButton.click();
     }
 
+    async clickTryForFreeButton() {
+        await this.tryForFreeButton.click();
+    }
+
     async checkCookiesMessageBox() {
-        if (expect(this.cookiesClose).toBeVisible()) {
-            this.cookiesClose.click();
+        if (this.cookiesClose !== null) {
+            await this.cookiesClose.click();
         }
     }
 }

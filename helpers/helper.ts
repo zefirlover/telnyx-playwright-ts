@@ -1,5 +1,3 @@
-import { Page } from '@playwright/test';
-import { MainPage } from '../pages/mainpage/Main.page';
 
 class Helper {
     static makeLorem() {
@@ -10,12 +8,6 @@ class Helper {
             text += possible.charAt(Math.floor(Math.random() * possible.length));
         }
         return text;
-    }
-
-    static async goToPowerfulProducts(page: Page) {
-        let mainPage = new MainPage(page);
-        await mainPage.checkCookiesMessageBox();
-        await mainPage.scrollToPowerfulProducts();
     }
 }
 
