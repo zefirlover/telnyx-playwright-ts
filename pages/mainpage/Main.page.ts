@@ -94,6 +94,10 @@ export class MainPage {
         await this.tryForFreeButton.click();
     }
 
+    async fillEmailInput(someText: string) {
+        await this.emailInput.fill(someText)
+    }
+
     async checkCookiesMessageBox() {
         if (this.cookiesClose !== null) {
             await this.cookiesClose.click();

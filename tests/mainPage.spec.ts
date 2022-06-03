@@ -193,34 +193,34 @@ test.describe('main page testing', () => {
         await expect(mainPage.whatsappPricingLink).toBeVisible();
     })
 
-    test('TNP-26 Verify the email input in EmailFormCtaForm on the main page',async ({ page }) => {
+    test('TNP-26 Verify the email input in EmailFormCtaForm on the main page', async ({ page }) => {
         const mainPage = new MainPage(page);
         const signUpPage = new SignUpPage(page);
         await expect(mainPage.emailInput).toBeVisible();
         await expect(mainPage.tryForFreeButton).toBeVisible();
-        await mainPage.emailInput.fill(randomEmail);
+        await mainPage.fillEmailInput(randomEmail);
         await mainPage.clickTryForFreeButton();
         await expect(signUpPage.emailInput).toBeVisible();
         await expect(signUpPage.emailInput).toHaveValue(randomEmail)
     })
 
-    test('TNP-27 Test the email input in Email Form with incorrect data',async ({ page }) => {
+    test('TNP-27 Test the email input in Email Form with incorrect data', async ({ page }) => {
         const mainPage = new MainPage(page);
         await expect(mainPage.emailInput).toBeVisible();
         await expect(mainPage.tryForFreeButton).toBeVisible();
-        await mainPage.emailInput.fill('testAtgmail.com');
+        await mainPage.fillEmailInput('testAtgmail.com');
         await mainPage.clickTryForFreeButton();
         await expect(mainPage.emailInput).toBeVisible();
         await expect(mainPage.tryForFreeButton).toBeVisible();
-        await mainPage.emailInput.fill('test@gmailcom');
+        await mainPage.fillEmailInput('test@gmailcom');
         await mainPage.clickTryForFreeButton();
         await expect(mainPage.emailInput).toBeVisible();
         await expect(mainPage.tryForFreeButton).toBeVisible();
-        await mainPage.emailInput.fill('test@gmail');
+        await mainPage.fillEmailInput('test@gmail');
         await mainPage.clickTryForFreeButton();
         await expect(mainPage.emailInput).toBeVisible();
         await expect(mainPage.tryForFreeButton).toBeVisible();
-        await mainPage.emailInput.fill('@gmail');
+        await mainPage.fillEmailInput('@gmail');
         await mainPage.clickTryForFreeButton();
         await expect(mainPage.emailInput).toBeVisible();
         await expect(mainPage.tryForFreeButton).toBeVisible();

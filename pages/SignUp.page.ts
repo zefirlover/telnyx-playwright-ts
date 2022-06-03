@@ -54,4 +54,12 @@ export class SignUpPage {
     async clickShowPasswordButton() {
         await this.showPasswordButton.click();
     }
+
+    async fillEmailInput(someText: string) {
+        await this.emailInput.fill(someText);
+    }
+
+    async fillPasswordInput(someText: string) {
+        await this.passwordInput.fill(someText);
+    }
 }

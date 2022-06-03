@@ -12,7 +12,7 @@ test.describe('sign up page testing', () => {
         await mainPage.checkCookiesMessageBox();
     })
 
-    test('TNP-20 Verify the Sign Up page',async ({ page }) => {
+    test('TNP-20 Verify the Sign Up page', async ({ page }) => {
         const mainPage = new MainPage(page);
         const signUpPage = new SignUpPage(page);
         await mainPage.visit();
@@ -21,7 +21,7 @@ test.describe('sign up page testing', () => {
         await expect(signUpPage.emailInput).toBeVisible();
     })
 
-    test('TNP-29 Verify the error messages on the Sign Up page are dislayed with empty inputs registration',async ({ page }) => {
+    test('TNP-29 Verify the error messages on the Sign Up page are dislayed with empty inputs registration', async ({ page }) => {
         const signUpPage = new SignUpPage(page);
         await expect(signUpPage.emailInput).toBeVisible();
         await signUpPage.clickEmailInput();
@@ -46,21 +46,21 @@ test.describe('sign up page testing', () => {
         await expect(signUpPage.passwordErrors).toHaveCount(4);
     })
 
-    test('TNP-22 Test the email validation on the Sign Up page with incorrect data',async ({ page }) => {
+    test('TNP-22 Test the email validation on the Sign Up page with incorrect data', async ({ page }) => {
         const signUpPage = new SignUpPage(page);
         await expect(signUpPage.emailInput).toBeVisible();
-        await signUpPage.emailInput.fill('testatgmail.com');
+        await signUpPage.fillEmailInput('testatgmail.com');
         await signUpPage.clickNameInput();
         await expect(signUpPage.emailErrorMessage).toBeVisible();
-        await signUpPage.emailInput.fill('test@gmailcom');
+        await signUpPage.fillEmailInput('test@gmailcom');
         await signUpPage.clickNameInput();
         await expect(signUpPage.emailErrorMessage).toBeVisible();
-        await signUpPage.emailInput.fill('@gmail');
+        await signUpPage.fillEmailInput('@gmail');
         await signUpPage.clickNameInput();
         await expect(signUpPage.emailErrorMessage).toBeVisible();
     })
 
-    test('TNP-25 Verify the Show/Hide password button',async ({ page }) => {
+    test('TNP-25 Verify the Show/Hide password button', async ({ page }) => {
         const signUpPage = new SignUpPage(page);
         await expect(signUpPage.passwordInput).toBeVisible();
         await expect(signUpPage.passwordInput).toHaveAttribute('type', 'password');
@@ -70,38 +70,38 @@ test.describe('sign up page testing', () => {
         await expect(signUpPage.passwordInput).toHaveAttribute('type', 'password');
     })
 
-    test('TNP-24 Test the password validation on the Sign Up page with incorrect data',async ({ page }) => {
+    test('TNP-24 Test the password validation on the Sign Up page with incorrect data', async ({ page }) => {
         const signUpPage = new SignUpPage(page);
         await expect(signUpPage.passwordInput).toBeVisible();
         await signUpPage.clickPasswordInput();
         await expect(signUpPage.passwordRequirements).toBeVisible();
         await expect(signUpPage.passwordErrors).toHaveCount(4);
-        await signUpPage.passwordInput.fill('h');
+        await signUpPage.fillPasswordInput('h');
         await expect(signUpPage.passwordErrors).toHaveCount(4);
-        await signUpPage.passwordInput.fill('huskthebest');
+        await signUpPage.fillPasswordInput('huskthebest');
         await expect(signUpPage.passwordErrors).toHaveCount(4);
-        await signUpPage.passwordInput.fill('huskthebestt');
+        await signUpPage.fillPasswordInput('huskthebestt');
         await expect(signUpPage.passwordRequirementErrors.nth(1)).toHaveAttribute('aria-hidden', 'true');
         await expect(signUpPage.passwordErrors).toHaveCount(3);
-        await signUpPage.passwordInput.fill('HUSKTHEBEST');
+        await signUpPage.fillPasswordInput('HUSKTHEBEST');
         await expect(signUpPage.passwordRequirementErrors.nth(4)).toHaveAttribute('aria-hidden', 'true');
         await expect(signUpPage.passwordErrors).toHaveCount(3);
-        await signUpPage.passwordInput.fill('7');
+        await signUpPage.fillPasswordInput('7');
         await expect(signUpPage.passwordRequirementErrors.nth(2)).toHaveAttribute('aria-hidden', 'true');
         await expect(signUpPage.passwordErrors).toHaveCount(3);
-        await signUpPage.passwordInput.fill('*');
+        await signUpPage.fillPasswordInput('*');
         await expect(signUpPage.passwordRequirementErrors.nth(3)).toHaveAttribute('aria-hidden', 'true');
         await expect(signUpPage.passwordErrors).toHaveCount(3);
-        await signUpPage.passwordInput.fill('HuskTheBestt');
+        await signUpPage.fillPasswordInput('HuskTheBestt');
         await expect(signUpPage.passwordRequirementErrors.nth(1)).toHaveAttribute('aria-hidden', 'true');
         await expect(signUpPage.passwordRequirementErrors.nth(4)).toHaveAttribute('aria-hidden', 'true');
         await expect(signUpPage.passwordErrors).toHaveCount(2);
-        await signUpPage.passwordInput.fill('HuskTheBest75');
+        await signUpPage.fillPasswordInput('HuskTheBest75');
         await expect(signUpPage.passwordRequirementErrors.nth(1)).toHaveAttribute('aria-hidden', 'true');
         await expect(signUpPage.passwordRequirementErrors.nth(2)).toHaveAttribute('aria-hidden', 'true');
         await expect(signUpPage.passwordRequirementErrors.nth(4)).toHaveAttribute('aria-hidden', 'true');
         await expect(signUpPage.passwordErrors).toHaveCount(1);
-        await signUpPage.passwordInput.fill('HuskTheBest_');
+        await signUpPage.fillPasswordInput('HuskTheBest_');
         await expect(signUpPage.passwordRequirementErrors.nth(1)).toHaveAttribute('aria-hidden', 'true');
         await expect(signUpPage.passwordRequirementErrors.nth(3)).toHaveAttribute('aria-hidden', 'true');
         await expect(signUpPage.passwordRequirementErrors.nth(4)).toHaveAttribute('aria-hidden', 'true');
