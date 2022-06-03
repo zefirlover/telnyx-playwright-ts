@@ -4,9 +4,6 @@ import { MainPage } from '../pages/mainpage/Main.page';
 import Helpers from '../helpers/helper';
 
 test.describe('sign up page testing', () => {
-    const randomEmail = `${Helpers.makeLorem()}@gmail.com`;
-    const correctName = 'name name';
-    const correctPassword = 'HuskTheBest75_';
 
     test.beforeEach(async ({ page }) => {
         const mainPage = new MainPage(page);
@@ -71,5 +68,43 @@ test.describe('sign up page testing', () => {
         await expect(signUpPage.passwordInput).toHaveAttribute('type', 'text');
         await signUpPage.clickShowPasswordButton();
         await expect(signUpPage.passwordInput).toHaveAttribute('type', 'password');
+    })
+
+    test('TNP-24 Test the password validation on the Sign Up page with incorrect data',async ({ page }) => {
+        const signUpPage = new SignUpPage(page);
+        await expect(signUpPage.passwordInput).toBeVisible();
+        await signUpPage.clickPasswordInput();
+        await expect(signUpPage.passwordRequirements).toBeVisible();
+        await expect(signUpPage.passwordErrors).toHaveCount(4);
+        await signUpPage.passwordInput.fill('h');
+        await expect(signUpPage.passwordErrors).toHaveCount(4);
+        await signUpPage.passwordInput.fill('huskthebest');
+        await expect(signUpPage.passwordErrors).toHaveCount(4);
+        await signUpPage.passwordInput.fill('huskthebestt');
+        await expect(signUpPage.passwordRequirementErrors.nth(1)).toHaveAttribute('aria-hidden', 'true');
+        await expect(signUpPage.passwordErrors).toHaveCount(3);
+        await signUpPage.passwordInput.fill('HUSKTHEBEST');
+        await expect(signUpPage.passwordRequirementErrors.nth(4)).toHaveAttribute('aria-hidden', 'true');
+        await expect(signUpPage.passwordErrors).toHaveCount(3);
+        await signUpPage.passwordInput.fill('7');
+        await expect(signUpPage.passwordRequirementErrors.nth(2)).toHaveAttribute('aria-hidden', 'true');
+        await expect(signUpPage.passwordErrors).toHaveCount(3);
+        await signUpPage.passwordInput.fill('*');
+        await expect(signUpPage.passwordRequirementErrors.nth(3)).toHaveAttribute('aria-hidden', 'true');
+        await expect(signUpPage.passwordErrors).toHaveCount(3);
+        await signUpPage.passwordInput.fill('HuskTheBestt');
+        await expect(signUpPage.passwordRequirementErrors.nth(1)).toHaveAttribute('aria-hidden', 'true');
+        await expect(signUpPage.passwordRequirementErrors.nth(4)).toHaveAttribute('aria-hidden', 'true');
+        await expect(signUpPage.passwordErrors).toHaveCount(2);
+        await signUpPage.passwordInput.fill('HuskTheBest75');
+        await expect(signUpPage.passwordRequirementErrors.nth(1)).toHaveAttribute('aria-hidden', 'true');
+        await expect(signUpPage.passwordRequirementErrors.nth(2)).toHaveAttribute('aria-hidden', 'true');
+        await expect(signUpPage.passwordRequirementErrors.nth(4)).toHaveAttribute('aria-hidden', 'true');
+        await expect(signUpPage.passwordErrors).toHaveCount(1);
+        await signUpPage.passwordInput.fill('HuskTheBest_');
+        await expect(signUpPage.passwordRequirementErrors.nth(1)).toHaveAttribute('aria-hidden', 'true');
+        await expect(signUpPage.passwordRequirementErrors.nth(3)).toHaveAttribute('aria-hidden', 'true');
+        await expect(signUpPage.passwordRequirementErrors.nth(4)).toHaveAttribute('aria-hidden', 'true');
+        await expect(signUpPage.passwordErrors).toHaveCount(1);
     })
 })

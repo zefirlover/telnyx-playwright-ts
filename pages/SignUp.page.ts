@@ -13,6 +13,7 @@ export class SignUpPage {
     readonly passwordRequirements: Locator;
     readonly formError: Locator;
     readonly showPasswordButton: Locator;
+    readonly passwordRequirementErrors: Locator;
 
     constructor(page: Page) {
         this.page = page;
@@ -27,6 +28,7 @@ export class SignUpPage {
         this.passwordRequirements = page.locator('#password_requirements');
         this.formError = page.locator('#signup-form_error');
         this.showPasswordButton = page.locator('div[class="sc-e03f9b04-2 cYdohw"]');
+        this.passwordRequirementErrors = page.locator('#password_requirements div');
     }
 
     async visit() {
