@@ -8,6 +8,7 @@ export class ElasticSipPage {
     readonly gbpCurrencyOption: Locator;
     readonly eurCurrencyOption: Locator;
     readonly priceText: Locator;
+    readonly calculateSavingsLink: Locator;
 
     constructor(page: Page) {
         this.page = page;
@@ -17,6 +18,7 @@ export class ElasticSipPage {
         this.gbpCurrencyOption = page.locator('li[role="option"]').nth(87);
         this.eurCurrencyOption = page.locator('li[role="option"]').nth(88);
         this.priceText = page.locator('[class="sc-3ef5d51e-18 emWxIX"]');
+        this.calculateSavingsLink = page.locator('a[href="/twilio-pricing-calculator"]').nth(1);
     }
 
     async visit() {
@@ -37,6 +39,10 @@ export class ElasticSipPage {
 
     async clickEurCurrencyOption() {
         await this.eurCurrencyOption.click();
+    }
+
+    async clickCalculateSavingsLink() {
+        await this.calculateSavingsLink.click();
     }
 
     async allPriceTextContains(currency: RegExp) {
