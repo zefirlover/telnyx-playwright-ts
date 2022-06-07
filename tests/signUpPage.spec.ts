@@ -6,15 +6,15 @@ import Helpers from '../helpers/helper';
 test.describe('sign up page testing', () => {
 
     test.beforeEach(async ({ page }) => {
-        const mainPage = new MainPage(page);
-        const signUpPage = new SignUpPage(page);
+        let mainPage = new MainPage(page);
+        let signUpPage = new SignUpPage(page);
         await signUpPage.visit();
         await mainPage.checkCookiesMessageBox();
     })
 
     test('TNP-20 Verify the Sign Up page', async ({ page }) => {
-        const mainPage = new MainPage(page);
-        const signUpPage = new SignUpPage(page);
+        let mainPage = new MainPage(page);
+        let signUpPage = new SignUpPage(page);
         await mainPage.visit();
         await expect(mainPage.signUpButton).toBeVisible();
         await mainPage.clickSignUpButton();
@@ -22,7 +22,7 @@ test.describe('sign up page testing', () => {
     })
 
     test('TNP-29 Verify the error messages on the Sign Up page are dislayed with empty inputs registration', async ({ page }) => {
-        const signUpPage = new SignUpPage(page);
+        let signUpPage = new SignUpPage(page);
         await expect(signUpPage.emailInput).toBeVisible();
         await signUpPage.clickEmailInput();
         await expect(signUpPage.emailErrorMessage).not.toBeVisible();
@@ -47,7 +47,7 @@ test.describe('sign up page testing', () => {
     })
 
     test('TNP-22 Test the email validation on the Sign Up page with incorrect data', async ({ page }) => {
-        const signUpPage = new SignUpPage(page);
+        let signUpPage = new SignUpPage(page);
         await expect(signUpPage.emailInput).toBeVisible();
         await signUpPage.fillEmailInput('testatgmail.com');
         await signUpPage.clickNameInput();
@@ -61,7 +61,7 @@ test.describe('sign up page testing', () => {
     })
 
     test('TNP-25 Verify the Show/Hide password button', async ({ page }) => {
-        const signUpPage = new SignUpPage(page);
+        let signUpPage = new SignUpPage(page);
         await expect(signUpPage.passwordInput).toBeVisible();
         await expect(signUpPage.passwordInput).toHaveAttribute('type', 'password');
         await signUpPage.clickShowPasswordButton();
@@ -71,7 +71,7 @@ test.describe('sign up page testing', () => {
     })
 
     test('TNP-24 Test the password validation on the Sign Up page with incorrect data', async ({ page }) => {
-        const signUpPage = new SignUpPage(page);
+        let signUpPage = new SignUpPage(page);
         await expect(signUpPage.passwordInput).toBeVisible();
         await signUpPage.clickPasswordInput();
         await expect(signUpPage.passwordRequirements).toBeVisible();
