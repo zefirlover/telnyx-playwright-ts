@@ -94,6 +94,10 @@ export class MainPage {
         await this.tryForFreeButton.click();
     }
 
+    async clickElasticSipPricingLink() {
+        await this.elasticSipPricingLink.click();
+    }
+
     async fillEmailInput(someText: string) {
         await this.emailInput.fill(someText)
     }
