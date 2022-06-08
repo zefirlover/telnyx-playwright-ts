@@ -13,6 +13,15 @@ export class TwilioPriceCalcPage {
     readonly increaseFirstOptionButton: Locator;
     readonly increaseSecondOptionButton: Locator;
     readonly increaseThirdOptionButton: Locator;
+    readonly submitButton: Locator;
+    readonly emailInput: Locator;
+    readonly firstNameInput: Locator;
+    readonly lastNameInput: Locator;
+    readonly websiteInput: Locator;
+    readonly firstNameError: Locator;
+    readonly lastNameError: Locator;
+    readonly emailError: Locator;
+    readonly websiteError: Locator;
 
     constructor (page: Page) {
         this.page = page;
@@ -27,6 +36,15 @@ export class TwilioPriceCalcPage {
         this.increaseFirstOptionButton = page.locator('[class="sc-5588e253-2 dyjmeu"]').nth(1);
         this.increaseSecondOptionButton = page.locator('[class="sc-5588e253-2 dyjmeu"]').nth(3);
         this.increaseThirdOptionButton = page.locator('[class="sc-5588e253-2 dyjmeu"]').nth(5);
+        this.submitButton = page.locator('button[type="submit"]');
+        this.emailInput = page.locator('#Email');
+        this.firstNameInput = page.locator('#FirstName');
+        this.lastNameInput = page.locator('#LastName');
+        this.websiteInput = page.locator('#Website');
+        this.firstNameError = page.locator('#FirstName_error');
+        this.lastNameError = page.locator('#LastName_error');
+        this.emailError = page.locator('#Email_error');
+        this.websiteError = page.locator('#Website_error');
     }
 
     async visit() {
@@ -35,12 +53,24 @@ export class TwilioPriceCalcPage {
 
     async clickMessagingApiPlate() {
         let box = await this.messagingApiPlate.boundingBox();
+        let checkedPlate = this.page.locator('[class*="ictSrj"]');
         await this.page.mouse.click(box.x + box.width / 2, box.y + box.height / 2);
+        if(await checkedPlate.count() == 0) {
+            this.messagingApiPlate.click();
+        }
     }
 
     async clickContinueButton() {
         let box = await this.continueButton.boundingBox();
+        let displayedContinueButton = this.page.locator('button[class*="hBNXWZ"]');
         await this.page.mouse.click(box.x + box.width / 2, box.y + box.height / 2);
+        if(await displayedContinueButton.count() >= 1) {
+            await this.page.mouse.click(box.x + box.width / 2, box.y + box.height / 2);
+        }
+    }
+    
+    async clickSubmitButton() {
+        this.submitButton.click();
     }
 
     async checkSavingsDecrease(buttonLocator: Locator) {
@@ -63,5 +93,13 @@ export class TwilioPriceCalcPage {
         if(moreSavings >= lessSavings) {
             throw new Error('lessSavings number cannot be bigger or equal to moreSavings number');
         }
+    }
+
+    async scrollToCalculatorDiv() {
+        this.calculatorDiv.scrollIntoViewIfNeeded();
+    }
+
+    async scrollToSubmitButton() {
+        this.submitButton.scrollIntoViewIfNeeded();
     }
 }

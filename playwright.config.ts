@@ -39,7 +39,8 @@ const config: PlaywrightTestConfig = {
     baseURL: 'https://telnyx.com/',
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
-    trace: 'on',
+    /* Options: 'on', 'retain-on-failure' */
+    trace: 'retain-on-failure',
   },
 
   /* Configure projects for major browsers */
