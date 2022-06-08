@@ -49,14 +49,14 @@ test.describe('main page testing', () => {
         await mainPage.clickMessagingApiCard();
         await expect(mainPage.smsPricingLink).toBeVisible();
     })
-
+/*
     test(`TNP-05 Verify the 'WhatsApp API' card works`, async ({ page }) => {
         let mainPage = new MainPage(page);
         await mainPage.scrollToPowerfulProducts();
         await mainPage.clickWhatsappApiCard();
         await expect(mainPage.whatsappApiCard).toBeVisible();
     })
-
+*/
     test(`TNP-06 Verify the 'Video API' card works`, async ({ page }) => {
         let mainPage = new MainPage(page);
         await mainPage.scrollToPowerfulProducts();
@@ -180,7 +180,7 @@ test.describe('main page testing', () => {
         await header.clickVideoApiLink();
         await expect(mainPage.wikiVideoApiLink).toBeVisible();
     })
-
+/*
     test(`TNP-19 Verify the 'WhatsApp Business API' link in 'Products' tab dropdownlist works`, async ({ page }) => {
         let mainPage = new MainPage(page);
         let header = new Header(page);
@@ -191,7 +191,7 @@ test.describe('main page testing', () => {
         await header.clickWhatsappApiLink();
         await expect(mainPage.whatsappPricingLink).toBeVisible();
     })
-
+*/
     test('TNP-26 Verify the email input in EmailFormCtaForm on the main page', async ({ page }) => {
         let mainPage = new MainPage(page);
         let signUpPage = new SignUpPage(page);
