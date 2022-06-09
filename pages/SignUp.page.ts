@@ -1,5 +1,8 @@
 import { Page, Locator } from '@playwright/test';
 
+// 1
+const emailInput = '#email';
+
 export class SignUpPage {
     readonly page: Page;
     readonly emailInput: Locator;

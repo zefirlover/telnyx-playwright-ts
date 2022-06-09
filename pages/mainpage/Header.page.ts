@@ -1,6 +1,7 @@
 import { Page, Locator } from '@playwright/test';
+const { Base } = require("./Main.page");
 
-export class Header {
+export class Header extends Base {
     readonly page: Page;
     readonly productsSpan: Locator;
     readonly solutionsSpan: Locator;
@@ -22,6 +23,7 @@ export class Header {
     readonly whatsappApiLink: Locator;
 
     constructor(page: Page) {
+        super();
         this.page = page;
         this.productsSpan = page.locator('span[tabIndex="0"]').nth(0);
         this.solutionsSpan = page.locator('span[tabIndex="0"]').nth(1);
@@ -43,6 +45,15 @@ export class Header {
         this.whatsappApiLink = page.locator('a[href="/products/whatsapp-api"]').nth(0);
     }
 
+    async hoverNavBarElement(elementText: string) {
+        super.hoverElement(`//*[@tabindex='0']/span[text()='${elementText}']`);
+    }
+
+    async verificationLinks(elementText: string) {
+        this.page.locator(`a[href*='/${elementText.toLowerCase()}']`)
+    }
+
+    // deprecated
     async clickProduct() {
         await this.productsSpan.click();
     }

@@ -49,14 +49,7 @@ test.describe('main page testing', () => {
         await mainPage.clickMessagingApiCard();
         await expect(mainPage.smsPricingLink).toBeVisible();
     })
-/*
-    test(`TNP-05 Verify the 'WhatsApp API' card works`, async ({ page }) => {
-        let mainPage = new MainPage(page);
-        await mainPage.scrollToPowerfulProducts();
-        await mainPage.clickWhatsappApiCard();
-        await expect(mainPage.whatsappApiCard).toBeVisible();
-    })
-*/
+
     test(`TNP-06 Verify the 'Video API' card works`, async ({ page }) => {
         let mainPage = new MainPage(page);
         await mainPage.scrollToPowerfulProducts();
@@ -180,18 +173,7 @@ test.describe('main page testing', () => {
         await header.clickVideoApiLink();
         await expect(mainPage.wikiVideoApiLink).toBeVisible();
     })
-/*
-    test(`TNP-19 Verify the 'WhatsApp Business API' link in 'Products' tab dropdownlist works`, async ({ page }) => {
-        let mainPage = new MainPage(page);
-        let header = new Header(page);
-        await expect(header.whatsappApiLink).not.toBeVisible();
-        await expect(header.productsSpan).toBeVisible();
-        await header.clickProduct();
-        await expect(header.whatsappApiLink).toBeVisible();
-        await header.clickWhatsappApiLink();
-        await expect(mainPage.whatsappPricingLink).toBeVisible();
-    })
-*/
+
     test('TNP-26 Verify the email input in EmailFormCtaForm on the main page', async ({ page }) => {
         let mainPage = new MainPage(page);
         let signUpPage = new SignUpPage(page);
@@ -211,16 +193,6 @@ test.describe('main page testing', () => {
         await mainPage.clickTryForFreeButton();
         await expect(mainPage.emailInput).toBeVisible();
         await expect(mainPage.tryForFreeButton).toBeVisible();
-        // bug here. this emails cannot be valid
-        /*
-        await mainPage.fillEmailInput('test@gmailcom');
-        await mainPage.clickTryForFreeButton();
-        await expect(mainPage.emailInput).toBeVisible();
-        await expect(mainPage.tryForFreeButton).toBeVisible();
-        await mainPage.fillEmailInput('test@gmail');
-        await mainPage.clickTryForFreeButton();
-        await expect(mainPage.emailInput).toBeVisible();
-        await expect(mainPage.tryForFreeButton).toBeVisible();*/
         await mainPage.fillEmailInput('@gmail');
         await mainPage.clickTryForFreeButton();
         await expect(mainPage.emailInput).toBeVisible();

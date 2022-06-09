@@ -1,6 +1,7 @@
 import { expect, Page, Locator } from '@playwright/test';
+const { Base } = require("../pages/Base.page")
 
-export class MainPage {
+export class MainPage extends Base {
     readonly page: Page;
     readonly emailConfirmForm: Locator;
     readonly cookiesClose: Locator;
@@ -26,6 +27,7 @@ export class MainPage {
     readonly tryForFreeButton: Locator;
 
     constructor(page: Page) {
+        super();
         this.page = page;
         this.emailConfirmForm = page.locator('form[name="EmailFormCtaForm"]');
         this.cookiesClose = page.locator('button[aria-label="close and deny"]');
