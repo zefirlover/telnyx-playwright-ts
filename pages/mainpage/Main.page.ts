@@ -1,9 +1,9 @@
-import { expect, Page, Locator } from '@playwright/test';
+import { Page, Locator } from '@playwright/test';
+import { BasePage } from '../Base.page';
 
-export class MainPage {
+export class MainPage extends BasePage {
     readonly page: Page;
     readonly emailConfirmForm: Locator;
-    readonly cookiesClose: Locator;
     readonly messagingApiCard: Locator;
     readonly wirelessCard: Locator;
     readonly smsPricingLink: Locator;
@@ -26,9 +26,9 @@ export class MainPage {
     readonly tryForFreeButton: Locator;
 
     constructor(page: Page) {
+        super(page);
         this.page = page;
         this.emailConfirmForm = page.locator('form[name="EmailFormCtaForm"]');
-        this.cookiesClose = page.locator('button[aria-label="close and deny"]');
         this.messagingApiCard = page.locator('a[href*="/sms-api"]').nth(1);
         this.wirelessCard = page.locator('a[href*="/iot-sim-card"]').nth(1);
         this.whatsappApiCard = page.locator('a[href*="/whatsapp-api"]').nth(1);
@@ -100,11 +100,5 @@ export class MainPage {
 
     async fillEmailInput(someText: string) {
         await this.emailInput.fill(someText)
-    }
-
-    async checkCookiesMessageBox() {
-        if (this.cookiesClose !== null) {
-            await this.cookiesClose.click();
-        }
     }
 }

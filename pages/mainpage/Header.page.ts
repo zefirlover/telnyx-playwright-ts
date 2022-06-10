@@ -1,6 +1,7 @@
 import { Page, Locator } from '@playwright/test';
+import { BasePage } from '../Base.page'
 
-export class Header {
+export class Header extends BasePage {
     readonly page: Page;
     readonly productsSpan: Locator;
     readonly solutionsSpan: Locator;
@@ -22,6 +23,7 @@ export class Header {
     readonly whatsappApiLink: Locator;
 
     constructor(page: Page) {
+        super(page);
         this.page = page;
         this.productsSpan = page.locator('span[tabIndex="0"]').nth(0);
         this.solutionsSpan = page.locator('span[tabIndex="0"]').nth(1);

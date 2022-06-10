@@ -1,6 +1,7 @@
 import { Page, Locator, expect } from '@playwright/test';
+import { BasePage } from './Base.page';
 
-export class TwilioPriceCalcPage {
+export class TwilioPriceCalcPage extends BasePage {
     readonly page: Page;
     readonly messagingApiPlate: Locator;
     readonly continueButton: Locator;
@@ -24,6 +25,7 @@ export class TwilioPriceCalcPage {
     readonly websiteError: Locator;
 
     constructor (page: Page) {
+        super(page);
         this.page = page;
         this.calculatorDiv = page.locator('[class="sc-1d1c658f-0 iHDmXz"]');
         this.messagingApiPlate = page.locator('[class="sc-a87e7459-1 gFVaeZ"]').nth(0);

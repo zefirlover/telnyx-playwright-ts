@@ -1,14 +1,12 @@
 import { test, expect } from '@playwright/test';
-import { MainPage } from '../pages/mainpage/Main.page';
 import { ElasticSipPage } from '../pages/ElasticSip.page';
 import { TwilioPriceCalcPage } from '../pages/TwilioPriceCalc.page';
 
 test.describe('testing the twilio price calculator page', () => {
     test.beforeEach(async ({ page }) => {
-        let mainPage = new MainPage(page);
         let twilioPriceCalcPage = new TwilioPriceCalcPage(page);
         await twilioPriceCalcPage.visit();
-        await mainPage.checkCookiesMessageBox();
+        await twilioPriceCalcPage.checkCookiesMessageBox();
     })
 
     test('TNP-32 Verify the twilio price calculator page', async ({ page }) => {

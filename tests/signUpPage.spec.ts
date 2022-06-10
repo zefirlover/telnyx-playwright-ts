@@ -6,10 +6,9 @@ import Helpers from '../helpers/helper';
 test.describe('sign up page testing', () => {
 
     test.beforeEach(async ({ page }) => {
-        let mainPage = new MainPage(page);
         let signUpPage = new SignUpPage(page);
         await signUpPage.visit();
-        await mainPage.checkCookiesMessageBox();
+        await signUpPage.checkCookiesMessageBox();
     })
 
     test('TNP-20 Verify the Sign Up page', async ({ page }) => {
