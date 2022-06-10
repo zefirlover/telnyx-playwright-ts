@@ -18,25 +18,6 @@ test.describe('main page testing', () => {
         await expect(mainPage.emailConfirmForm).toBeVisible();
     })
 
-    test('TNP-02 Verify the main page hovers', async ({ page }) => {
-        let header = new Header(page);
-        await expect(header.productsLink).not.toBeVisible();
-        await header.clickProduct();
-        await expect(header.productsLink).toBeVisible();
-        await expect(header.solutionsLink).not.toBeVisible();
-        await header.clickSolutions();
-        await expect(header.solutionsLink).toBeVisible();
-        await expect(header.resourcesLink).not.toBeVisible();
-        await header.clickResources();
-        await expect(header.resourcesLink).toBeVisible();
-        await expect(header.companyLink).not.toBeVisible();
-        await header.clickCompany();
-        await expect(header.companyLink).toBeVisible();
-        await expect(header.pricingLink).not.toBeVisible();
-        await header.clickPricing();
-        await expect(header.pricingLink).toBeVisible();
-    })
-
     test(`TNP-03 Verify the 'Powerful products' cards table`, async ({ page }) => {
         let mainPage = new MainPage(page);
         await mainPage.scrollToPowerfulProducts();
@@ -84,72 +65,6 @@ test.describe('main page testing', () => {
         await expect(mainPage.exploreProductsButton).toBeVisible();
         await mainPage.clickExploreProductsButton();
         await expect(mainPage.productFaxLink).toBeVisible();
-    })
-
-    test(`TNP-12 Verify the 'Elastic SIP Trunking' link in 'Products' tab dropdownlist works`, async ({ page }) => {
-        let mainPage = new MainPage(page);
-        let header = new Header(page);
-        await expect(header.productsLink).not.toBeVisible();
-        await expect(header.productsSpan).toBeVisible();
-        await header.clickProduct();
-        await expect(header.truckingLink).toBeVisible();
-        await header.clickTrucking();
-        await expect(mainPage.elasticSipPricingLink).toBeVisible();
-    })
-
-    test(`TNP-11 Verify the 'See all products' link in 'Products' tab dropdownlist works`, async ({ page }) => {
-        let mainPage = new MainPage(page);
-        let header = new Header(page);
-        await expect(header.productsLink).not.toBeVisible();
-        await expect(header.productsSpan).toBeVisible();
-        await header.clickProduct();
-        await expect(header.productsLink).toBeVisible();
-        await header.clickProductLink();
-        await expect(mainPage.productFaxLink).toBeVisible();
-    })
-
-    test(`TNP-13 Verify the 'Voice API' link in 'Products' tab dropdownlist works`, async ({ page }) => {
-        let mainPage = new MainPage(page);
-        let header = new Header(page);
-        await expect(header.voiceApiLink).not.toBeVisible();
-        await expect(header.productsSpan).toBeVisible();
-        await header.clickProduct();
-        await expect(header.voiceApiLink).toBeVisible();
-        await header.clickVoiceApiLink();
-        await expect(mainPage.callControlGuideLink).toBeVisible();
-    })
-
-    test(`TNP-14 Verify the 'SMS API' link in 'Products' tab dropdownlist works`, async ({ page }) => {
-        let mainPage = new MainPage(page);
-        let header = new Header(page);
-        await expect(header.smsApiLink).not.toBeVisible();
-        await expect(header.productsSpan).toBeVisible();
-        await header.clickProduct();
-        await expect(header.smsApiLink).toBeVisible();
-        await header.clickSmsApiLink();
-        await expect(mainPage.smsPricingLink).toBeVisible();
-    })
-
-    test(`TNP-15 Verify the 'Wireless' link in 'Products' tab dropdownlist works`, async ({ page }) => {
-        let mainPage = new MainPage(page);
-        let header = new Header(page);
-        await expect(header.wirelessLink).not.toBeVisible();
-        await expect(header.productsSpan).toBeVisible();
-        await header.clickProduct();
-        await expect(header.wirelessLink).toBeVisible();
-        await header.clickWirelessLink();
-        await expect(mainPage.simPointsOfSaleLink).toBeVisible();
-    })
-
-    test(`TNP-16 Verify the 'Number Lookup' link in 'Products' tab dropdownlist works`, async ({ page }) => {
-        let mainPage = new MainPage(page);
-        let header = new Header(page);
-        await expect(header.numberLookupLink).not.toBeVisible();
-        await expect(header.productsSpan).toBeVisible();
-        await header.clickProduct();
-        await expect(header.numberLookupLink).toBeVisible();
-        await header.clickNumberLookupLink();
-        await expect(mainPage.numberLookupTermsLink).toBeVisible();
     })
 
     test(`TNP-17 Verify the 'Global Numbers' link in 'Products' tab dropdownlist works`, async ({ page }) => {

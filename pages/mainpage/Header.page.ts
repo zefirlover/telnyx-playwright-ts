@@ -3,6 +3,7 @@ import { BasePage } from '../Base.page'
 
 export class Header extends BasePage {
     readonly page: Page;
+    readonly navBarSpan: Locator;
     readonly productsSpan: Locator;
     readonly solutionsSpan: Locator;
     readonly resourcesSpan: Locator;
@@ -25,6 +26,8 @@ export class Header extends BasePage {
     constructor(page: Page) {
         super(page);
         this.page = page;
+        // //*[@tabindex="0"]/span[text()="Products"]
+        this.navBarSpan = page.locator(`//*[@tabindex="0"]/span[text()="Products"]`);
         this.productsSpan = page.locator('span[tabIndex="0"]').nth(0);
         this.solutionsSpan = page.locator('span[tabIndex="0"]').nth(1);
         this.resourcesSpan = page.locator('span[tabIndex="0"]').nth(2);
