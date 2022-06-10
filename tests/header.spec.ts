@@ -27,7 +27,7 @@ test.describe('header testing', () => {
     });
 
     test('TNP-02 Verify the header hovers', async ({ page }) => {
-        for (let i = 0; i < 5; i++) {
+        for (let i = 0; i < arrNavBarElements.length; i++) {
             let element = arrNavBarElements.find(e => e.id === i);
             let tabLocator = page.locator(`//*[@tabindex="0"]/span[text()="${element.name}"]`);
             let linkLocator = page.locator(`header *> li *> a[href*="/${element.name.toLowerCase()}"]`).first();
@@ -39,14 +39,14 @@ test.describe('header testing', () => {
     })
 
     test(`TNP-11-16,41 Verify links in 'Products' tab dropdownlist works`, async ({ page }) => {
-        for (let i = 0; i < 8; i++) {
+        let header = new Header(page);
+        for (let i = 0; i < arrProducts.length; i++) {
             let element = arrProducts.find(e => e.id === i);
-            let tabLocator = page.locator(`//*[@tabindex="0"]/span[text()="Products"]`);
             let redirectLink = page.locator(`header *> li *> a[href*="/${element.link}"]`).first();
             let headerText = page.locator(`
                 //h1//strong[contains(text(), '${element.checkText}')]|//h1//span[contains(text(), '${element.checkText}')]
             `)
-            await tabLocator.hover();
+            await header.productsTab.hover();
             await expect(redirectLink).toBeVisible();
             await redirectLink.click();
             await expect(headerText).toBeVisible();

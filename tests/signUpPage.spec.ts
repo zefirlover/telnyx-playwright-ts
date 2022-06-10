@@ -1,7 +1,6 @@
 import { test, expect } from '@playwright/test';
 import { SignUpPage } from '../pages/signUp.page';
 import { MainPage } from '../pages/mainpage/Main.page';
-import Helpers from '../helpers/helper';
 
 test.describe('sign up page testing', () => {
 

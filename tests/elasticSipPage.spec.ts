@@ -8,7 +8,6 @@ const arrCurrency = [
     { id: 3, name: 'EUR', currency: '€' }
 ]
 
-
 test.describe('testing the elastic sip pricing page', () => {
     test.beforeEach(async ({ page }) => {
         let elasticSipPage = new ElasticSipPage(page);
@@ -29,7 +28,7 @@ test.describe('testing the elastic sip pricing page', () => {
         let elasticSipPage = new ElasticSipPage(page);
         await expect(elasticSipPage.chooseCurrencyListbox).toBeVisible();
         await elasticSipPage.clickChooseCurrencyListbox();
-        for (let i = 0; i < 4; i++) {
+        for (let i = 0; i < arrCurrency.length; i++) {
             let element = arrCurrency.find(e => e.id === i);
             let currency = new RegExp(`${element.currency}`);
             let locator = page.locator(`//*[@role="option"]/div[text()="${element.name}"]`);

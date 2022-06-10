@@ -4,19 +4,15 @@ import { BasePage } from './Base.page';
 export class ElasticSipPage extends BasePage {
     readonly page: Page;
     readonly chooseCurrencyListbox: Locator;
-    readonly usdCurrencyOption: Locator;
-    readonly audCurrencyOption: Locator;
-    readonly gbpCurrencyOption: Locator;
-    readonly eurCurrencyOption: Locator;
-    readonly priceText: Locator;
     readonly calculateSavingsLink: Locator;
+    readonly priceText: Locator;
 
     constructor(page: Page) {
         super(page);
         this.page = page;
         this.chooseCurrencyListbox = page.locator('button[aria-haspopup="listbox"]').nth(1);
+        this.calculateSavingsLink = page.locator('main *> [href="/twilio-pricing-calculator"]');
         this.priceText = page.locator('[class="sc-3ef5d51e-18 emWxIX"]');
-        this.calculateSavingsLink = page.locator('a[href="/twilio-pricing-calculator"]').nth(1);
     }
 
     async visit() {
