@@ -29,8 +29,8 @@ test.describe('header testing', () => {
     test('TNP-02 Verify the header hovers', async ({ page }) => {
         for (let i = 0; i < arrNavBarElements.length; i++) {
             let element = arrNavBarElements.find(e => e.id === i);
-            let tabLocator = page.locator(`//*[@tabindex="0"]/span[text()="${element.name}"]`);
-            let linkLocator = page.locator(`header *> li *> a[href*="/${element.name.toLowerCase()}"]`).first();
+            let tabLocator = page.locator(`//*[@tabindex="0"]/span[text()="${element?.name}"]`);
+            let linkLocator = page.locator(`header *> li *> a[href*="/${element?.name.toLowerCase()}"]`).first();
             await expect(tabLocator).toBeVisible();
             await expect(linkLocator).not.toBeVisible();
             await tabLocator.hover();
@@ -42,9 +42,9 @@ test.describe('header testing', () => {
         let header = new Header(page);
         for (let i = 0; i < arrProducts.length; i++) {
             let element = arrProducts.find(e => e.id === i);
-            let redirectLink = page.locator(`header *> li *> a[href*="/${element.link}"]`).first();
+            let redirectLink = page.locator(`header *> li *> a[href*="/${element?.link}"]`).first();
             let headerText = page.locator(`
-                //h1//strong[contains(text(), '${element.checkText}')]|//h1//span[contains(text(), '${element.checkText}')]
+                //h1//strong[contains(text(), '${element?.checkText}')]|//h1//span[contains(text(), '${element?.checkText}')]
             `)
             await header.productsTab.hover();
             await expect(redirectLink).toBeVisible();

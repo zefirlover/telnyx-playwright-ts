@@ -33,9 +33,9 @@ test.describe('main page testing', () => {
         let mainPage = new MainPage(page);
         for (let i = 0; i < arrProducts.length; i++) {
             let element = arrProducts.find(e => e.id === i);
-            let cardLink = page.locator(`main *> a[href*="/${element.link}"]`);
+            let cardLink = page.locator(`main *> a[href*="/${element?.link}"]`);
             let headerText = page.locator(`
-                //h1//strong[contains(text(), '${element.checkText}')]|//h1//span[contains(text(), '${element.checkText}')]
+                //h1//strong[contains(text(), '${element?.checkText}')]|//h1//span[contains(text(), '${element?.checkText}')]
             `)
             await mainPage.scrollToPowerfulProducts();
             await expect(cardLink).toBeVisible();
@@ -61,6 +61,9 @@ test.describe('main page testing', () => {
         await expect(mainPage.emailInput).toBeVisible();
         for (let i = 0; i < arrIncorrectEmails.length; i++) {
             let element = arrIncorrectEmails.find(e => e.id === i);
+            if (element == undefined) {
+                throw new Error('"element" is undefined');
+            }
             await expect(mainPage.emailInput).toBeVisible();
             await expect(mainPage.tryForFreeButton).toBeVisible();
             await mainPage.fillEmailInput(element.email);

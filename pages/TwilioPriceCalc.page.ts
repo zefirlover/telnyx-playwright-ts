@@ -55,15 +55,21 @@ export class TwilioPriceCalcPage extends BasePage {
 
     async clickMessagingApiPlate() {
         let box = await this.messagingApiPlate.boundingBox();
+        if (box == null) {
+            throw new Error('"box" is null. Possibly, element is not visible');
+        }
         let checkedPlate = this.page.locator('[class*="ictSrj"]');
         await this.page.mouse.click(box.x + box.width / 2, box.y + box.height / 2);
-        if(await checkedPlate.count() == 0) {
+        if (await checkedPlate.count() == 0) {
             this.messagingApiPlate.click();
         }
     }
 
     async clickContinueButton() {
         let box = await this.continueButton.boundingBox();
+        if (box == null) {
+            throw new Error('"box" is null. Possibly, element is not visible');
+        }
         let displayedContinueButton = this.page.locator('button[class*="hBNXWZ"]');
         await this.page.mouse.click(box.x + box.width / 2, box.y + box.height / 2);
         if(await displayedContinueButton.count() >= 1) {

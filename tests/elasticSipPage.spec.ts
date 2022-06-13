@@ -30,8 +30,8 @@ test.describe('testing the elastic sip pricing page', () => {
         await elasticSipPage.clickChooseCurrencyListbox();
         for (let i = 0; i < arrCurrency.length; i++) {
             let element = arrCurrency.find(e => e.id === i);
-            let currency = new RegExp(`${element.currency}`);
-            let locator = page.locator(`//*[@role="option"]/div[text()="${element.name}"]`);
+            let currency = new RegExp(`${element?.currency}`);
+            let locator = page.locator(`//*[@role="option"]/div[text()="${element?.name}"]`);
             await expect(locator).toBeVisible();
             await locator.click();
             await elasticSipPage.clickChooseCurrencyListbox();

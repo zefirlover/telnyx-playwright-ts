@@ -3,7 +3,6 @@ import { SignUpPage } from '../pages/signUp.page';
 import { MainPage } from '../pages/mainpage/Main.page';
 
 test.describe('sign up page testing', () => {
-
     test.beforeEach(async ({ page }) => {
         let signUpPage = new SignUpPage(page);
         await signUpPage.visit();
