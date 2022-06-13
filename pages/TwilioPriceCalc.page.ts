@@ -14,6 +14,10 @@ export class TwilioPriceCalcPage extends BasePage {
     readonly increaseFirstOptionButton: Locator;
     readonly increaseSecondOptionButton: Locator;
     readonly increaseThirdOptionButton: Locator;
+    readonly sendSmsInput: Locator;
+    readonly receiveSmsInput: Locator;
+    readonly sendMmsInput: Locator;
+    readonly receiveMmsInput: Locator;
     readonly submitButton: Locator;
     readonly emailInput: Locator;
     readonly firstNameInput: Locator;
@@ -27,17 +31,24 @@ export class TwilioPriceCalcPage extends BasePage {
     constructor (page: Page) {
         super(page);
         this.page = page;
-        this.calculatorDiv = page.locator('[class="sc-1d1c658f-0 iHDmXz"]');
+        this.calculatorDiv = page.locator('//button[text()="Continue"]');
         this.messagingApiPlate = page.locator('[class="sc-a87e7459-1 gFVaeZ"]').nth(0);
-        this.continueButton = page.locator('[class="sc-5d3a275a-0 eKznVb"]').nth(4);
+        this.continueButton = page.locator('main *> button:not([aria-label])');
         this.inputsList = page.locator('[class="sc-a87e7459-0 fkuRxe"]');
         this.yourSavingsText = page.locator('[class*="Text-sc-5o8owa-0 sc-c7d3cfaa-1"]');
+        // deprecated buttons
         this.decreaseFirstOptionButton = page.locator('[class="sc-5588e253-2 dyjmeu"]').nth(0);
         this.decreaseSecondOptionButton = page.locator('[class="sc-5588e253-2 dyjmeu"]').nth(2);
         this.decreaseThirdOptionButton = page.locator('[class="sc-5588e253-2 dyjmeu"]').nth(4);
         this.increaseFirstOptionButton = page.locator('[class="sc-5588e253-2 dyjmeu"]').nth(1);
         this.increaseSecondOptionButton = page.locator('[class="sc-5588e253-2 dyjmeu"]').nth(3);
         this.increaseThirdOptionButton = page.locator('[class="sc-5588e253-2 dyjmeu"]').nth(5);
+        // calc inputs
+        this.sendSmsInput = page.locator('#send-sms');
+        this.receiveSmsInput = page.locator('#receive-sms');
+        this.sendMmsInput = page.locator('#send-mms');
+        this.receiveMmsInput = page.locator('#receive-mms');
+
         this.submitButton = page.locator('button[type="submit"]');
         this.emailInput = page.locator('#Email');
         this.firstNameInput = page.locator('#FirstName');
@@ -81,9 +92,13 @@ export class TwilioPriceCalcPage extends BasePage {
         this.submitButton.click();
     }
 
-    async checkSavingsDecrease(buttonLocator: Locator) {
+    async checkSavingsDecrease(inputLocator: Locator) {
         let moreSavingsStr = await this.yourSavingsText.innerText();
-        await buttonLocator.click();
+        let inputValue = await inputLocator.inputValue();
+        let insertData: number;
+        +inputValue <= 0? insertData = 0: insertData = +inputValue - 25000;
+        await inputLocator.fill(insertData.toString());
+        await expect(this.yourSavingsText).toBeVisible();
         let lessSavingsStr = await this.yourSavingsText.innerText();
         let moreSavings = parseFloat(moreSavingsStr);
         let lessSavings = parseFloat(lessSavingsStr);
@@ -92,9 +107,12 @@ export class TwilioPriceCalcPage extends BasePage {
         }
     }
 
-    async checkSavingsIncrease(buttonLocator: Locator) {
+    async checkSavingsIncrease(inputLocator: Locator) {
         let moreSavingsStr = await this.yourSavingsText.innerText();
-        await buttonLocator.click();
+        let inputValue = await inputLocator.inputValue();
+        let insertData: number;
+        +inputValue <= 0? insertData = 0: insertData = +inputValue + 25000;
+        await inputLocator.fill(insertData.toString());
         let lessSavingsStr = await this.yourSavingsText.innerText();
         let moreSavings = parseFloat(moreSavingsStr);
         let lessSavings = parseFloat(lessSavingsStr);

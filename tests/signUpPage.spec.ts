@@ -1,6 +1,11 @@
 import { test, expect } from '@playwright/test';
 import { SignUpPage } from '../pages/signUp.page';
 import { MainPage } from '../pages/mainpage/Main.page';
+const arrIncorrectEmails = [
+    { id: 0, email: 'testAtgmail.com' },
+    { id: 1, email: '@gmail' },
+    { id: 2, email: 'test@gmailcom' }
+]
 
 test.describe('sign up page testing', () => {
     test.beforeEach(async ({ page }) => {
@@ -46,15 +51,15 @@ test.describe('sign up page testing', () => {
     test('TNP-22 Test the email validation on the Sign Up page with incorrect data', async ({ page }) => {
         let signUpPage = new SignUpPage(page);
         await expect(signUpPage.emailInput).toBeVisible();
-        await signUpPage.fillEmailInput('testatgmail.com');
-        await signUpPage.clickNameInput();
-        await expect(signUpPage.emailErrorMessage).toBeVisible();
-        await signUpPage.fillEmailInput('test@gmailcom');
-        await signUpPage.clickNameInput();
-        await expect(signUpPage.emailErrorMessage).toBeVisible();
-        await signUpPage.fillEmailInput('@gmail');
-        await signUpPage.clickNameInput();
-        await expect(signUpPage.emailErrorMessage).toBeVisible();
+        for (let i = 0; i < arrIncorrectEmails.length; i++) {
+            let element = arrIncorrectEmails.find(e => e.id === i);
+            if (element == undefined) {
+                throw new Error('"element" is undefined');
+            }
+            await signUpPage.fillEmailInput(element.email);
+            await signUpPage.clickNameInput();
+            await expect(signUpPage.emailErrorMessage).toBeVisible();
+        }
     })
 
     test('TNP-25 Verify the Show/Hide password button', async ({ page }) => {
