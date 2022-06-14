@@ -72,6 +72,55 @@ test.describe('sign up page testing', () => {
         await expect(signUpPage.passwordInput).toHaveAttribute('type', 'password');
     })
 
+    test('test', async ({ page }) => {
+        let signUpPage = new SignUpPage(page);
+        let arrIncorrectPasswords = [
+            { id: 0, password: 'h' },
+            { id: 1, password: 'huskthebest' },
+            { id: 2, password: 'huskthebestt' },
+            { id: 3, password: 'HUSKTHEBEST' },
+            { id: 4, password: '7' },
+            { id: 5, password: '*' },
+            { id: 6, password: 'HuskTheBestt' },
+            { id: 7, password: 'HuskTheBest75' },
+            { id: 8, password: 'HuskTheBest_' }
+        ]
+        await expect(signUpPage.passwordInput).toBeVisible();
+        await signUpPage.clickPasswordInput();
+        for (let i = 0; i < arrIncorrectPasswords.length; i++) {
+            let element = arrIncorrectPasswords.find(e => e.id === i);
+            if (element == undefined) {
+                throw new Error('"element" is undefined');
+            }
+            switch (true) {
+                case /[A-Z]/.test(element.password):
+                    await signUpPage.fillPasswordInput(element.password);
+                    await expect(signUpPage.passwordRequirementErrors.nth(4)).toHaveAttribute('aria-hidden', 'true');
+                    //await expect(signUpPage.passwordErrors).toHaveCount(3);
+                    //break;
+                case (element.password.length > 12):
+                    await signUpPage.fillPasswordInput(element.password);
+                    await expect(signUpPage.passwordRequirementErrors.nth(1)).toHaveAttribute('aria-hidden', 'true');
+                    //await expect(signUpPage.passwordErrors).toHaveCount(3);
+                    //break;
+                case /[0-9]/.test(element.password):
+                    await signUpPage.fillPasswordInput(element.password);
+                    await expect(signUpPage.passwordRequirementErrors.nth(2)).toHaveAttribute('aria-hidden', 'true');
+                    //await expect(signUpPage.passwordErrors).toHaveCount(3);
+                    //break;
+                case /[*|\":<>[\]{}`\\()';@&$]/.test(element.password):
+                    await signUpPage.fillPasswordInput(element.password);
+                    await expect(signUpPage.passwordRequirementErrors.nth(3)).toHaveAttribute('aria-hidden', 'true');
+                    //await expect(signUpPage.passwordErrors).toHaveCount(3);
+                    //break;
+                default:
+                    await signUpPage.fillPasswordInput(element.password);
+                    await expect(signUpPage.passwordErrors).toHaveCount(4);
+                    break;
+            }
+        }
+    })
+
     test('TNP-24 Test the password validation on the Sign Up page with incorrect data', async ({ page }) => {
         let signUpPage = new SignUpPage(page);
         await expect(signUpPage.passwordInput).toBeVisible();
