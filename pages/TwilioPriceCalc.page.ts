@@ -8,12 +8,6 @@ export class TwilioPriceCalcPage extends BasePage {
     readonly calculatorDiv: Locator;
     readonly inputsList: Locator;
     readonly yourSavingsText: Locator;
-    readonly decreaseFirstOptionButton: Locator;
-    readonly decreaseSecondOptionButton: Locator;
-    readonly decreaseThirdOptionButton: Locator;
-    readonly increaseFirstOptionButton: Locator;
-    readonly increaseSecondOptionButton: Locator;
-    readonly increaseThirdOptionButton: Locator;
     readonly sendSmsInput: Locator;
     readonly receiveSmsInput: Locator;
     readonly sendMmsInput: Locator;
@@ -36,19 +30,10 @@ export class TwilioPriceCalcPage extends BasePage {
         this.continueButton = page.locator('main *> button:not([aria-label])');
         this.inputsList = page.locator('[class="sc-a87e7459-0 fkuRxe"]');
         this.yourSavingsText = page.locator('[class*="Text-sc-5o8owa-0 sc-c7d3cfaa-1"]');
-        // deprecated buttons
-        this.decreaseFirstOptionButton = page.locator('[class="sc-5588e253-2 dyjmeu"]').nth(0);
-        this.decreaseSecondOptionButton = page.locator('[class="sc-5588e253-2 dyjmeu"]').nth(2);
-        this.decreaseThirdOptionButton = page.locator('[class="sc-5588e253-2 dyjmeu"]').nth(4);
-        this.increaseFirstOptionButton = page.locator('[class="sc-5588e253-2 dyjmeu"]').nth(1);
-        this.increaseSecondOptionButton = page.locator('[class="sc-5588e253-2 dyjmeu"]').nth(3);
-        this.increaseThirdOptionButton = page.locator('[class="sc-5588e253-2 dyjmeu"]').nth(5);
-        // calc inputs
         this.sendSmsInput = page.locator('#send-sms');
         this.receiveSmsInput = page.locator('#receive-sms');
         this.sendMmsInput = page.locator('#send-mms');
         this.receiveMmsInput = page.locator('#receive-mms');
-
         this.submitButton = page.locator('button[type="submit"]');
         this.emailInput = page.locator('#Email');
         this.firstNameInput = page.locator('#FirstName');
