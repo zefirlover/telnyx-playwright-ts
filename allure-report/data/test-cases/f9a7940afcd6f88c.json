@@ -1,0 +1,225 @@
+{
+  "uid" : "f9a7940afcd6f88c",
+  "name" : "TNP-07 Verify the 'Wireless' card works",
+  "fullName" : "TNP-07 Verify the 'Wireless' card works",
+  "historyId" : "webkit mainPage.spec.ts main page testing TNP-07 Verify the 'Wireless' card works",
+  "time" : {
+    "start" : 1655204566883,
+    "stop" : 1655204585308,
+    "duration" : 18425
+  },
+  "status" : "failed",
+  "statusMessage" : "expect(received).toBeVisible()\nCall log:\n  - expect.toBeVisible with timeout 5000ms\n  - waiting for selector \"a[href*=\"sim-card/point-of-sale\"]\"\n",
+  "statusTrace" : "\n    at G:\\work\\telnyx-playwright-ts\\tests\\mainPage.spec.ts:71:52",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 0,
+  "retriesStatusChange" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "expect(received).toBeVisible()\nCall log:\n  - expect.toBeVisible with timeout 5000ms\n  - waiting for selector \"a[href*=\"sim-card/point-of-sale\"]\"\n",
+    "statusTrace" : "\n    at G:\\work\\telnyx-playwright-ts\\tests\\mainPage.spec.ts:71:52",
+    "steps" : [ {
+      "name" : "Before Hooks",
+      "time" : {
+        "start" : 1655204566883,
+        "stop" : 1655204574904,
+        "duration" : 8021
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "beforeEach hook",
+        "time" : {
+          "start" : 1655204566884,
+          "stop" : 1655204574904,
+          "duration" : 8020
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "browserContext.newPage",
+          "time" : {
+            "start" : 1655204566956,
+            "stop" : 1655204567264,
+            "duration" : 308
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "hasContent" : false,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false
+        }, {
+          "name" : "page.goto",
+          "time" : {
+            "start" : 1655204567266,
+            "stop" : 1655204571231,
+            "duration" : 3965
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "hasContent" : false,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false
+        }, {
+          "name" : "locator.click(button[aria-label=\"close and deny\"])",
+          "time" : {
+            "start" : 1655204571232,
+            "stop" : 1655204574904,
+            "duration" : 3672
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "hasContent" : false,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 3,
+        "hasContent" : true,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 4,
+      "hasContent" : true,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "locator.scrollIntoViewIfNeeded(a[href*=\"/iot-sim-card\"] >> nth=1)",
+      "time" : {
+        "start" : 1655204574906,
+        "stop" : 1655204576892,
+        "duration" : 1986
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : false,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "locator.click(a[href*=\"/iot-sim-card\"] >> nth=1)",
+      "time" : {
+        "start" : 1655204576893,
+        "stop" : 1655204578392,
+        "duration" : 1499
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : false,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "expect.toBeVisible",
+      "time" : {
+        "start" : 1655204578393,
+        "stop" : 1655204583688,
+        "duration" : 5295
+      },
+      "status" : "failed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : false,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "After Hooks",
+      "time" : {
+        "start" : 1655204583688,
+        "stop" : 1655204585293,
+        "duration" : 1605
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "browserContext.close",
+        "time" : {
+          "start" : 1655204584089,
+          "stop" : 1655204584096,
+          "duration" : 7
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "hasContent" : false,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "hasContent" : true,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    } ],
+    "attachments" : [ {
+      "uid" : "70aa6eecd39d2647",
+      "name" : "trace",
+      "source" : "70aa6eecd39d2647.ZIP",
+      "type" : "application/zip",
+      "size" : 2696046
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 10,
+    "hasContent" : true,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "language",
+    "value" : "JavaScript"
+  }, {
+    "name" : "framework",
+    "value" : "Playwright"
+  }, {
+    "name" : "parentSuite",
+    "value" : "webkit"
+  }, {
+    "name" : "suite",
+    "value" : "mainPage.spec.ts"
+  }, {
+    "name" : "subSuite",
+    "value" : "main page testing"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Product defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "tags" : [ ]
+  },
+  "source" : "f9a7940afcd6f88c.json",
+  "parameterValues" : [ ]
+}

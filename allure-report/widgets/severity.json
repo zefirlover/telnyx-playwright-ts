@@ -1,0 +1,901 @@
+[ {
+  "uid" : "4aa73721b6556c90",
+  "name" : "TNP-27 Test the email input in Email Form with incorrect data",
+  "time" : {
+    "start" : 1655204355729,
+    "stop" : 1655204367840,
+    "duration" : 12111
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "e86f16e1fd30aefe",
+  "name" : "TNP-30 Verify the Elastic SIP Trunking Pricing page",
+  "time" : {
+    "start" : 1655204010219,
+    "stop" : 1655204033056,
+    "duration" : 22837
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "6b1e5f2deac5e36d",
+  "name" : "TNP-18 Verify the 'Video API' link in 'Products' tab dropdownlist works",
+  "time" : {
+    "start" : 1655203921319,
+    "stop" : 1655203932979,
+    "duration" : 11660
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "aa54e7bbe5a2509",
+  "name" : "TNP-09 Verify the 'Elastic SIP Trunking' card works",
+  "time" : {
+    "start" : 1655204586084,
+    "stop" : 1655204603153,
+    "duration" : 17069
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "d071fe790adf391b",
+  "name" : "TNP-15 Verify the 'Wireless' link in 'Products' tab dropdownlist works",
+  "time" : {
+    "start" : 1655204663142,
+    "stop" : 1655204687058,
+    "duration" : 23916
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "9bc7020fb191eb01",
+  "name" : "TNP-34 Verify the Get the full price breakdown overlap is displayed",
+  "time" : {
+    "start" : 1655204442271,
+    "stop" : 1655204448742,
+    "duration" : 6471
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "2173df4370bb54f",
+  "name" : "TNP-14 Verify the 'SMS API' link in 'Products' tab dropdownlist works",
+  "time" : {
+    "start" : 1655204288043,
+    "stop" : 1655204306049,
+    "duration" : 18006
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "e68f8755aa5828ee",
+  "name" : "TNP-07 Verify the 'Wireless' card works",
+  "time" : {
+    "start" : 1655203864906,
+    "stop" : 1655203874062,
+    "duration" : 9156
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "495d7b81e8c8e226",
+  "name" : "TNP-10 Verify the 'Explore our products' button in 'Powerful products' cards table works",
+  "time" : {
+    "start" : 1655204207532,
+    "stop" : 1655204237546,
+    "duration" : 30014
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "74dba795dabe5837",
+  "name" : "TNP-20 Verify the Sign Up page",
+  "time" : {
+    "start" : 1655203943851,
+    "stop" : 1655203960374,
+    "duration" : 16523
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "d02ff0ddaa8c9c0c",
+  "name" : "TNP-18 Verify the 'Video API' link in 'Products' tab dropdownlist works",
+  "time" : {
+    "start" : 1655204690783,
+    "stop" : 1655204714644,
+    "duration" : 23861
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "73ea14b52cb4c9ac",
+  "name" : "TNP-10 Verify the 'Explore our products' button in 'Powerful products' cards table works",
+  "time" : {
+    "start" : 1655204603172,
+    "stop" : 1655204622013,
+    "duration" : 18841
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "2f7a685cff3d283a",
+  "name" : "TNP-09 Verify the 'Elastic SIP Trunking' card works",
+  "time" : {
+    "start" : 1655203874067,
+    "stop" : 1655203882298,
+    "duration" : 8231
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "a89de7072fee5509",
+  "name" : "TNP-22 Test the email validation on the Sign Up page with incorrect data",
+  "time" : {
+    "start" : 1655203960379,
+    "stop" : 1655203970598,
+    "duration" : 10219
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "252e04c2eba08ced",
+  "name" : "TNP-31 Verify the currency was changed when the currency was changed in the listbox",
+  "time" : {
+    "start" : 1655204053297,
+    "stop" : 1655204098835,
+    "duration" : 45538
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "3a78998552fe1fc0",
+  "name" : "TNP-33 Verify the twilio price calculator functionality",
+  "time" : {
+    "start" : 1655203990834,
+    "stop" : 1655203998610,
+    "duration" : 7776
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "67d28a5896db122b",
+  "name" : "TNP-30 Verify the Elastic SIP Trunking Pricing page",
+  "time" : {
+    "start" : 1655204475953,
+    "stop" : 1655204506199,
+    "duration" : 30246
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "14ae0bf7625e5bb5",
+  "name" : "TNP-09 Verify the 'Elastic SIP Trunking' card works",
+  "time" : {
+    "start" : 1655204178148,
+    "stop" : 1655204207530,
+    "duration" : 29382
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "cc4a083e96911e",
+  "name" : "TNP-27 Test the email input in Email Form with incorrect data",
+  "time" : {
+    "start" : 1655203933385,
+    "stop" : 1655203945983,
+    "duration" : 12598
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "e36fb474f439ef05",
+  "name" : "TNP-01 Verify the main page",
+  "time" : {
+    "start" : 1655204506950,
+    "stop" : 1655204524397,
+    "duration" : 17447
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "44fd689c0617591f",
+  "name" : "TNP-32 Verify the twilio price calculator page",
+  "time" : {
+    "start" : 1655204429670,
+    "stop" : 1655204442267,
+    "duration" : 12597
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "304f60b48e292c93",
+  "name" : "TNP-35 Verify all inputs in breakdown overlap are required",
+  "time" : {
+    "start" : 1655204003017,
+    "stop" : 1655204008849,
+    "duration" : 5832
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "8b7fb0c627a59765",
+  "name" : "TNP-06 Verify the 'Video API' card works",
+  "time" : {
+    "start" : 1655204151471,
+    "stop" : 1655204178142,
+    "duration" : 26671
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "2daa9bcea9b4fcbb",
+  "name" : "TNP-24 Test the password validation on the Sign Up page with incorrect data",
+  "time" : {
+    "start" : 1655204801587,
+    "stop" : 1655204832921,
+    "duration" : 31334
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "169c037fcdae5ff6",
+  "name" : "TNP-35 Verify all inputs in breakdown overlap are required",
+  "time" : {
+    "start" : 1655204865957,
+    "stop" : 1655204883445,
+    "duration" : 17488
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "7eba72dff14591e7",
+  "name" : "TNP-20 Verify the Sign Up page",
+  "time" : {
+    "start" : 1655204734861,
+    "stop" : 1655204766871,
+    "duration" : 32010
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "2d225e2bd190b8d5",
+  "name" : "TNP-22 Test the email validation on the Sign Up page with incorrect data",
+  "time" : {
+    "start" : 1655204768171,
+    "stop" : 1655204800057,
+    "duration" : 31886
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "c7834ac14b5f561a",
+  "name" : "TNP-24 Test the password validation on the Sign Up page with incorrect data",
+  "time" : {
+    "start" : 1655203970600,
+    "stop" : 1655203979668,
+    "duration" : 9068
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "bddc1341eba83be2",
+  "name" : "TNP-13 Verify the 'Voice API' link in 'Products' tab dropdownlist works",
+  "time" : {
+    "start" : 1655203896232,
+    "stop" : 1655203908651,
+    "duration" : 12419
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "69e40a5b83393c81",
+  "name" : "TNP-12 Verify the 'Elastic SIP Trunking' link in 'Products' tab dropdownlist works",
+  "time" : {
+    "start" : 1655203882308,
+    "stop" : 1655203896227,
+    "duration" : 13919
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "ba67ff8dc4f87847",
+  "name" : "TNP-13 Verify the 'Voice API' link in 'Products' tab dropdownlist works",
+  "time" : {
+    "start" : 1655204254596,
+    "stop" : 1655204291344,
+    "duration" : 36748
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "a4434d6356db2ab",
+  "name" : "TNP-26 Verify the email input in EmailFormCtaForm on the main page",
+  "time" : {
+    "start" : 1655204709248,
+    "stop" : 1655204734843,
+    "duration" : 25595
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "82d9a48ea41f2da5",
+  "name" : "TNP-30 Verify the Elastic SIP Trunking Pricing page",
+  "time" : {
+    "start" : 1655203829519,
+    "stop" : 1655203842156,
+    "duration" : 12637
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "e9b5ddfffc816351",
+  "name" : "TNP-33 Verify the twilio price calculator functionality",
+  "time" : {
+    "start" : 1655204835730,
+    "stop" : 1655204867276,
+    "duration" : 31546
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "56adf4d9bc4aa91e",
+  "name" : "TNP-06 Verify the 'Video API' card works",
+  "time" : {
+    "start" : 1655203858302,
+    "stop" : 1655203865874,
+    "duration" : 7572
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "f75852d33e680688",
+  "name" : "TNP-29 Verify the error messages on the Sign Up page are dislayed with empty inputs registration",
+  "time" : {
+    "start" : 1655204389733,
+    "stop" : 1655204407581,
+    "duration" : 17848
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "2319cac5ad18640c",
+  "name" : "TNP-26 Verify the email input in EmailFormCtaForm on the main page",
+  "time" : {
+    "start" : 1655204335368,
+    "stop" : 1655204355725,
+    "duration" : 20357
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "9d8461c1071b333c",
+  "name" : "TNP-10 Verify the 'Explore our products' button in 'Powerful products' cards table works",
+  "time" : {
+    "start" : 1655203877835,
+    "stop" : 1655203884224,
+    "duration" : 6389
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "f67d58bed7073176",
+  "name" : "TNP-16 Verify the 'Number Lookup' link in 'Products' tab dropdownlist works",
+  "time" : {
+    "start" : 1655204306054,
+    "stop" : 1655204319431,
+    "duration" : 13377
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "fa3b32682911dbe8",
+  "name" : "TNP-16 Verify the 'Number Lookup' link in 'Products' tab dropdownlist works",
+  "time" : {
+    "start" : 1655203911885,
+    "stop" : 1655203921314,
+    "duration" : 9429
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "6cb220b55121cb11",
+  "name" : "TNP-04 Verify the 'Messaging API' card works",
+  "time" : {
+    "start" : 1655204550993,
+    "stop" : 1655204566880,
+    "duration" : 15887
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "595fc03011a184be",
+  "name" : "TNP-08 Verify the 'Voice API' card works",
+  "time" : {
+    "start" : 1655204177429,
+    "stop" : 1655204214636,
+    "duration" : 37207
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "9da2807d836cf281",
+  "name" : "TNP-06 Verify the 'Video API' card works",
+  "time" : {
+    "start" : 1655204559401,
+    "stop" : 1655204580740,
+    "duration" : 21339
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "465d09c3b09fbce7",
+  "name" : "TNP-14 Verify the 'SMS API' link in 'Products' tab dropdownlist works",
+  "time" : {
+    "start" : 1655204646807,
+    "stop" : 1655204669945,
+    "duration" : 23138
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "900184ce270ce713",
+  "name" : "TNP-34 Verify the Get the full price breakdown overlap is displayed",
+  "time" : {
+    "start" : 1655204833474,
+    "stop" : 1655204864764,
+    "duration" : 31290
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "61eda96c213a5924",
+  "name" : "TNP-04 Verify the 'Messaging API' card works",
+  "time" : {
+    "start" : 1655203855645,
+    "stop" : 1655203864902,
+    "duration" : 9257
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "74dc9e7d9283b046",
+  "name" : "TNP-25 Verify the Show/Hide password button",
+  "time" : {
+    "start" : 1655204407583,
+    "stop" : 1655204417722,
+    "duration" : 10139
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "44f35cb49c6b56bb",
+  "name" : "TNP-25 Verify the Show/Hide password button",
+  "time" : {
+    "start" : 1655204772439,
+    "stop" : 1655204804622,
+    "duration" : 32183
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "c905933990c0aac5",
+  "name" : "TNP-17 Verify the 'Global Numbers' link in 'Products' tab dropdownlist works",
+  "time" : {
+    "start" : 1655204319436,
+    "stop" : 1655204335356,
+    "duration" : 15920
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "ac092068e28e468b",
+  "name" : "TNP-24 Test the password validation on the Sign Up page with incorrect data",
+  "time" : {
+    "start" : 1655204417725,
+    "stop" : 1655204429634,
+    "duration" : 11909
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "f9a7940afcd6f88c",
+  "name" : "TNP-07 Verify the 'Wireless' card works",
+  "time" : {
+    "start" : 1655204566883,
+    "stop" : 1655204585308,
+    "duration" : 18425
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "68beed91591d74ae",
+  "name" : "TNP-01 Verify the main page",
+  "time" : {
+    "start" : 1655204033092,
+    "stop" : 1655204039151,
+    "duration" : 6059
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "2be8d2802968aa6c",
+  "name" : "TNP-12 Verify the 'Elastic SIP Trunking' link in 'Products' tab dropdownlist works",
+  "time" : {
+    "start" : 1655204613825,
+    "stop" : 1655204640780,
+    "duration" : 26955
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "b336e717ffd62dcf",
+  "name" : "TNP-14 Verify the 'SMS API' link in 'Products' tab dropdownlist works",
+  "time" : {
+    "start" : 1655203900244,
+    "stop" : 1655203911880,
+    "duration" : 11636
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "327d7dacbb5a4d9c",
+  "name" : "TNP-03 Verify the 'Powerful products' cards table",
+  "time" : {
+    "start" : 1655204099607,
+    "stop" : 1655204150664,
+    "duration" : 51057
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "4b5b55d6d1557b95",
+  "name" : "TNP-34 Verify the Get the full price breakdown overlap is displayed",
+  "time" : {
+    "start" : 1655203998612,
+    "stop" : 1655204003014,
+    "duration" : 4402
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "3acef4214e4e091d",
+  "name" : "TNP-02 Verify the main page hovers",
+  "time" : {
+    "start" : 1655203847165,
+    "stop" : 1655203858298,
+    "duration" : 11133
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "95daa64c4e844b66",
+  "name" : "TNP-20 Verify the Sign Up page",
+  "time" : {
+    "start" : 1655204367857,
+    "stop" : 1655204389729,
+    "duration" : 21872
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "d0074ce64d2b4178",
+  "name" : "TNP-13 Verify the 'Voice API' link in 'Products' tab dropdownlist works",
+  "time" : {
+    "start" : 1655204640787,
+    "stop" : 1655204663137,
+    "duration" : 22350
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "5e495e75c49b9645",
+  "name" : "TNP-32 Verify the twilio price calculator page",
+  "time" : {
+    "start" : 1655203979686,
+    "stop" : 1655203989084,
+    "duration" : 9398
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "f12146c51d9bd6c3",
+  "name" : "TNP-18 Verify the 'Video API' link in 'Products' tab dropdownlist works",
+  "time" : {
+    "start" : 1655204334565,
+    "stop" : 1655204404207,
+    "duration" : 69642
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "b86c37e733229b6e",
+  "name" : "TNP-04 Verify the 'Messaging API' card works",
+  "time" : {
+    "start" : 1655204103082,
+    "stop" : 1655204150575,
+    "duration" : 47493
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "6aab0abcb16174c4",
+  "name" : "TNP-29 Verify the error messages on the Sign Up page are dislayed with empty inputs registration",
+  "time" : {
+    "start" : 1655204739751,
+    "stop" : 1655204771664,
+    "duration" : 31913
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "4d931e550c29893d",
+  "name" : "TNP-32 Verify the twilio price calculator page",
+  "time" : {
+    "start" : 1655204805366,
+    "stop" : 1655204833469,
+    "duration" : 28103
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "439c67bdc44d78f1",
+  "name" : "TNP-31 Verify the currency was changed when the currency was changed in the listbox",
+  "time" : {
+    "start" : 1655203829523,
+    "stop" : 1655203847241,
+    "duration" : 17718
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "75a4cec96d3779a8",
+  "name" : "TNP-17 Verify the 'Global Numbers' link in 'Products' tab dropdownlist works",
+  "time" : {
+    "start" : 1655204687062,
+    "stop" : 1655204709244,
+    "duration" : 22182
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "4d39f8baf1a46b51",
+  "name" : "TNP-03 Verify the 'Powerful products' cards table",
+  "time" : {
+    "start" : 1655204535788,
+    "stop" : 1655204550980,
+    "duration" : 15192
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "5729d531f8bf4f55",
+  "name" : "TNP-11 Verify the 'See all products' link in 'Products' tab dropdownlist works",
+  "time" : {
+    "start" : 1655204622017,
+    "stop" : 1655204646803,
+    "duration" : 24786
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "db0dba6f591d74cd",
+  "name" : "TNP-27 Test the email input in Email Form with incorrect data",
+  "time" : {
+    "start" : 1655204714648,
+    "stop" : 1655204739736,
+    "duration" : 25088
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "3e0fd894c03afe7a",
+  "name" : "TNP-03 Verify the 'Powerful products' cards table",
+  "time" : {
+    "start" : 1655203847278,
+    "stop" : 1655203855485,
+    "duration" : 8207
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "f5f26140df20a614",
+  "name" : "TNP-26 Verify the email input in EmailFormCtaForm on the main page",
+  "time" : {
+    "start" : 1655203932985,
+    "stop" : 1655203943831,
+    "duration" : 10846
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "b20d6ef67d1a19d6",
+  "name" : "TNP-11 Verify the 'See all products' link in 'Products' tab dropdownlist works",
+  "time" : {
+    "start" : 1655203884230,
+    "stop" : 1655203900239,
+    "duration" : 16009
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "ccc66108249ec95d",
+  "name" : "TNP-16 Verify the 'Number Lookup' link in 'Products' tab dropdownlist works",
+  "time" : {
+    "start" : 1655204669951,
+    "stop" : 1655204690779,
+    "duration" : 20828
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "41ad28be2703935d",
+  "name" : "TNP-08 Verify the 'Voice API' card works",
+  "time" : {
+    "start" : 1655203865879,
+    "stop" : 1655203877827,
+    "duration" : 11948
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "9f16a22e05bda981",
+  "name" : "TNP-15 Verify the 'Wireless' link in 'Products' tab dropdownlist works",
+  "time" : {
+    "start" : 1655204292660,
+    "stop" : 1655204332995,
+    "duration" : 40335
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "ff1e93b43d1fe957",
+  "name" : "TNP-01 Verify the main page",
+  "time" : {
+    "start" : 1655203842194,
+    "stop" : 1655203847162,
+    "duration" : 4968
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "9439c5872d0241e",
+  "name" : "TNP-35 Verify all inputs in breakdown overlap are required",
+  "time" : {
+    "start" : 1655204448746,
+    "stop" : 1655204462979,
+    "duration" : 14233
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "d5eeccbf18e922f2",
+  "name" : "TNP-22 Test the email validation on the Sign Up page with incorrect data",
+  "time" : {
+    "start" : 1655204405000,
+    "stop" : 1655204436038,
+    "duration" : 31038
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "7c4420f967c19617",
+  "name" : "TNP-02 Verify the main page hovers",
+  "time" : {
+    "start" : 1655204524402,
+    "stop" : 1655204558390,
+    "duration" : 33988
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "161fa4273eee83c8",
+  "name" : "TNP-08 Verify the 'Voice API' card works",
+  "time" : {
+    "start" : 1655204580744,
+    "stop" : 1655204612806,
+    "duration" : 32062
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "98690817996bdc1d",
+  "name" : "TNP-11 Verify the 'See all products' link in 'Products' tab dropdownlist works",
+  "time" : {
+    "start" : 1655204247234,
+    "stop" : 1655204277238,
+    "duration" : 30004
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "9a9bebd6b7b27407",
+  "name" : "TNP-02 Verify the main page hovers",
+  "time" : {
+    "start" : 1655204039154,
+    "stop" : 1655204101706,
+    "duration" : 62552
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "63bc2afa12088642",
+  "name" : "TNP-15 Verify the 'Wireless' link in 'Products' tab dropdownlist works",
+  "time" : {
+    "start" : 1655203908655,
+    "stop" : 1655203920412,
+    "duration" : 11757
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "69004f58c2f981b5",
+  "name" : "TNP-07 Verify the 'Wireless' card works",
+  "time" : {
+    "start" : 1655204151540,
+    "stop" : 1655204177424,
+    "duration" : 25884
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "7411d27a3d64aa8c",
+  "name" : "TNP-31 Verify the currency was changed when the currency was changed in the listbox",
+  "time" : {
+    "start" : 1655204502654,
+    "stop" : 1655204534628,
+    "duration" : 31974
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "9c97f37842c48103",
+  "name" : "TNP-29 Verify the error messages on the Sign Up page are dislayed with empty inputs registration",
+  "time" : {
+    "start" : 1655203946001,
+    "stop" : 1655203960382,
+    "duration" : 14381
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "c0645e14cb78814a",
+  "name" : "TNP-17 Verify the 'Global Numbers' link in 'Products' tab dropdownlist works",
+  "time" : {
+    "start" : 1655203920416,
+    "stop" : 1655203933380,
+    "duration" : 12964
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "1e24bd5e92c27cf0",
+  "name" : "TNP-25 Verify the Show/Hide password button",
+  "time" : {
+    "start" : 1655203960384,
+    "stop" : 1655204020419,
+    "duration" : 60035
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "8c95bc637e48342b",
+  "name" : "TNP-33 Verify the twilio price calculator functionality",
+  "time" : {
+    "start" : 1655204449197,
+    "stop" : 1655204501917,
+    "duration" : 52720
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "810cc0d3f74705f3",
+  "name" : "TNP-12 Verify the 'Elastic SIP Trunking' link in 'Products' tab dropdownlist works",
+  "time" : {
+    "start" : 1655204216014,
+    "stop" : 1655204246752,
+    "duration" : 30738
+  },
+  "status" : "broken",
+  "severity" : "normal"
+} ]
