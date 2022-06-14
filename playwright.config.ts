@@ -50,7 +50,7 @@ const config: PlaywrightTestConfig = {
       use: {
         ...devices['Desktop Chrome'],
       },
-    },
+    },/*
 
     {
       name: 'firefox',
@@ -64,7 +64,7 @@ const config: PlaywrightTestConfig = {
       use: {
         ...devices['Desktop Safari'],
       },
-    },
+    },*/
 
     /* Test against mobile viewports. */
     // {
