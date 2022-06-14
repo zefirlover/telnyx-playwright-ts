@@ -64,4 +64,10 @@ export class SignUpPage extends BasePage {
     async fillPasswordInput(someText: string) {
         await this.passwordInput.fill(someText);
     }
+
+    async verifyErrorsAreLessThanFour() {
+        if (await this.passwordErrors.count() >= 4) {
+            throw new Error('too many password errors');
+        }
+    }
 }
