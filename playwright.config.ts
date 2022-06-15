@@ -34,6 +34,7 @@ const config: PlaywrightTestConfig = {
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     headless: true,
+    browserName: 'chromium',
     /* Maximum time each action such as `click()` can take. Defaults to 0 (no limit). */
     actionTimeout: 0,
     /* Base URL to use in actions like `await page.goto('/')`. */
@@ -45,13 +46,14 @@ const config: PlaywrightTestConfig = {
   },
 
   /* Configure projects for major browsers */
-  projects: [
+  projects: [/*
     {
       name: 'chromium',
       use: {
         ...devices['Desktop Chrome'],
+        headless: true
       },
-    },/*
+    },
 
     {
       name: 'firefox',
