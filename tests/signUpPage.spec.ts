@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { SignUpPage } from '../pages/signUp.page';
+import { SignUpPage } from '../../telnyx-playwright-ts/pages/SignUp.page';
 import { MainPage } from '../pages/mainpage/Main.page';
 const arrIncorrectEmails = [
     { id: 0, email: 'testAtgmail.com' },

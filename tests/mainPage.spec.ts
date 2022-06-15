@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 import { MainPage } from '../pages/mainpage/Main.page';
-import { SignUpPage } from '../pages/signUp.page';
+import { SignUpPage } from '../../telnyx-playwright-ts/pages/SignUp.page';
 import Helpers from '../helpers/helper';
 const arrProducts = [
     { id: 0, link: 'sms-api', checkText: 'Send and receive texts' },
