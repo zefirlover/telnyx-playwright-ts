@@ -22,7 +22,7 @@ export class MainPage extends BasePage {
     }
 
     async visit() {
-        await this.page.goto('');
+        await this.page.goto('https://telnyx.com');
     }
 
     async scrollToPowerfulProducts() {

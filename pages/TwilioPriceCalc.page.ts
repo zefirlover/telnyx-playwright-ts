@@ -46,7 +46,7 @@ export class TwilioPriceCalcPage extends BasePage {
     }
 
     async visit() {
-        await this.page.goto('/twilio-pricing-calculator');
+        await this.page.goto('https://telnyx.com/twilio-pricing-calculator');
     }
 
     async clickMessagingApiPlate() {

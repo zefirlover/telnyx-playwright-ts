@@ -34,7 +34,7 @@ export class SignUpPage extends BasePage {
     }
 
     async visit() {
-        await this.page.goto('/sign-up');
+        await this.page.goto('https://telnyx.com/sign-up');
     }
 
     async clickCreateAccountButton() {

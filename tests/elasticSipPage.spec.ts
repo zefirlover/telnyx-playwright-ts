@@ -11,7 +11,7 @@ const arrCurrency = [
 test.describe('testing the elastic sip pricing page', () => {
     test.beforeEach(async ({ page }) => {
         let elasticSipPage = new ElasticSipPage(page);
-        await page.goto('/pricing/elastic-sip');
+        await elasticSipPage.visit();
         await elasticSipPage.checkCookiesMessageBox();
     });
 

@@ -16,7 +16,7 @@ export class ElasticSipPage extends BasePage {
     }
 
     async visit() {
-        await this.page.goto('/pricing/elastic-sip');
+        await this.page.goto('https://telnyx.com/pricing/elastic-sip');
     }
 
     async clickChooseCurrencyListbox() {
