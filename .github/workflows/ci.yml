@@ -22,7 +22,7 @@ jobs:
         cache: 'npm'
       # trying to install npm packages
     - run: npm i
-    - run: npx playwright install 
+    - run: npx playwright install --with-deps 
     - name: run test
       # trying to run tests
       run: npx playwright test
