@@ -29,7 +29,7 @@ export class TwilioPriceCalcPage extends BasePage {
         this.messagingApiPlate = page.locator('[class="sc-a87e7459-1 gFVaeZ"]').nth(0);
         this.continueButton = page.locator('main *> button:not([aria-label])');
         this.inputsList = page.locator('[class="sc-a87e7459-0 fkuRxe"]');
-        this.yourSavingsText = page.locator('[class*="Text-sc-5o8owa-0 sc-c7d3cfaa-1"]');
+        this.yourSavingsText = page.locator('[class="Text-sc-5o8owa-0 sc-c7d3cfaa-1 gBsjXt fdlLDD"]');
         this.sendSmsInput = page.locator('#send-sms');
         this.receiveSmsInput = page.locator('#receive-sms');
         this.sendMmsInput = page.locator('#send-mms');
@@ -62,7 +62,7 @@ export class TwilioPriceCalcPage extends BasePage {
     }
 
     async clickContinueButton() {
-        let box = await this.continueButton.boundingBox();
+        let box = await this.calculatorDiv.boundingBox();
         if (box == null) {
             throw new Error('"box" is null. Possibly, element is not visible');
         }
@@ -78,7 +78,9 @@ export class TwilioPriceCalcPage extends BasePage {
     }
 
     async checkSavingsDecrease(inputLocator: Locator) {
-        let moreSavingsStr = await this.yourSavingsText.innerText();
+        await expect(this.yourSavingsText).toBeVisible({ timeout: 10000 });
+        await expect(inputLocator).toBeVisible();
+        let moreSavingsStr = await this.yourSavingsText.innerText({ timeout: 2000 });
         let inputValue = await inputLocator.inputValue();
         let insertData: number;
         +inputValue <= 0? insertData = 0: insertData = +inputValue - 25000;
@@ -107,7 +109,7 @@ export class TwilioPriceCalcPage extends BasePage {
     }
 
     async scrollToCalculatorDiv() {
-        this.calculatorDiv.scrollIntoViewIfNeeded();
+        this.inputsList.scrollIntoViewIfNeeded();
     }
 
     async scrollToSubmitButton() {
