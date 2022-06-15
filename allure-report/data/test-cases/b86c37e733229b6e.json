@@ -1,0 +1,165 @@
+{
+  "uid" : "b86c37e733229b6e",
+  "name" : "TNP-04 Verify the 'Messaging API' card works",
+  "fullName" : "TNP-04 Verify the 'Messaging API' card works",
+  "historyId" : "firefox mainPage.spec.ts main page testing TNP-04 Verify the 'Messaging API' card works",
+  "time" : {
+    "start" : 1655204103082,
+    "stop" : 1655204150575,
+    "duration" : 47493
+  },
+  "status" : "broken",
+  "statusMessage" : "Timeout of 30000ms exceeded in beforeEach hook.",
+  "statusTrace" : "Timeout of 30000ms exceeded in beforeEach hook.\n    at G:\\work\\telnyx-playwright-ts\\tests\\mainPage.spec.ts:10:10",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 0,
+  "retriesStatusChange" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "broken",
+    "statusMessage" : "Timeout of 30000ms exceeded in beforeEach hook.",
+    "statusTrace" : "Timeout of 30000ms exceeded in beforeEach hook.\n    at G:\\work\\telnyx-playwright-ts\\tests\\mainPage.spec.ts:10:10",
+    "steps" : [ {
+      "name" : "Before Hooks",
+      "time" : {
+        "start" : 1655204103083,
+        "stop" : 1655204136389,
+        "duration" : 33306
+      },
+      "status" : "failed",
+      "steps" : [ {
+        "name" : "beforeEach hook",
+        "time" : {
+          "start" : 1655204103084,
+          "stop" : 1655204136389,
+          "duration" : 33305
+        },
+        "status" : "failed",
+        "steps" : [ {
+          "name" : "browserContext.newPage",
+          "time" : {
+            "start" : 1655204111784,
+            "stop" : 1655204113116,
+            "duration" : 1332
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "hasContent" : false,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false
+        }, {
+          "name" : "page.goto",
+          "time" : {
+            "start" : 1655204113127,
+            "stop" : 1655204136389,
+            "duration" : 23262
+          },
+          "status" : "failed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "hasContent" : false,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 2,
+        "hasContent" : true,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 3,
+      "hasContent" : true,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "After Hooks",
+      "time" : {
+        "start" : 1655204133094,
+        "stop" : 1655204150547,
+        "duration" : 17453
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "browserContext.close",
+        "time" : {
+          "start" : 1655204136374,
+          "stop" : 1655204136391,
+          "duration" : 17
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "hasContent" : false,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "hasContent" : true,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    } ],
+    "attachments" : [ {
+      "uid" : "1538d60cf74ae9c1",
+      "name" : "trace",
+      "source" : "1538d60cf74ae9c1.ZIP",
+      "type" : "application/zip",
+      "size" : 422521
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 6,
+    "hasContent" : true,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "language",
+    "value" : "JavaScript"
+  }, {
+    "name" : "framework",
+    "value" : "Playwright"
+  }, {
+    "name" : "parentSuite",
+    "value" : "firefox"
+  }, {
+    "name" : "suite",
+    "value" : "mainPage.spec.ts"
+  }, {
+    "name" : "subSuite",
+    "value" : "main page testing"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Test defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "tags" : [ ]
+  },
+  "source" : "b86c37e733229b6e.json",
+  "parameterValues" : [ ]
+}

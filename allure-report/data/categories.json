@@ -1,0 +1,521 @@
+{
+  "uid" : "4b4757e66a1912dae1a509f688f20b0f",
+  "name" : "categories",
+  "children" : [ {
+    "name" : "Test defects",
+    "children" : [ {
+      "name" : "Timeout of 30000ms exceeded in beforeEach hook.",
+      "children" : [ {
+        "name" : "TNP-25 Verify the Show/Hide password button",
+        "uid" : "1e24bd5e92c27cf0",
+        "parentUid" : "af8fabd4853dbb4e98807fea9dd98b71",
+        "status" : "broken",
+        "time" : {
+          "start" : 1655203960384,
+          "stop" : 1655204020419,
+          "duration" : 60035
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "TNP-03 Verify the 'Powerful products' cards table",
+        "uid" : "327d7dacbb5a4d9c",
+        "parentUid" : "af8fabd4853dbb4e98807fea9dd98b71",
+        "status" : "broken",
+        "time" : {
+          "start" : 1655204099607,
+          "stop" : 1655204150664,
+          "duration" : 51057
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "TNP-04 Verify the 'Messaging API' card works",
+        "uid" : "b86c37e733229b6e",
+        "parentUid" : "af8fabd4853dbb4e98807fea9dd98b71",
+        "status" : "broken",
+        "time" : {
+          "start" : 1655204103082,
+          "stop" : 1655204150575,
+          "duration" : 47493
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "TNP-12 Verify the 'Elastic SIP Trunking' link in 'Products' tab dropdownlist works",
+        "uid" : "810cc0d3f74705f3",
+        "parentUid" : "af8fabd4853dbb4e98807fea9dd98b71",
+        "status" : "broken",
+        "time" : {
+          "start" : 1655204216014,
+          "stop" : 1655204246752,
+          "duration" : 30738
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "TNP-13 Verify the 'Voice API' link in 'Products' tab dropdownlist works",
+        "uid" : "ba67ff8dc4f87847",
+        "parentUid" : "af8fabd4853dbb4e98807fea9dd98b71",
+        "status" : "broken",
+        "time" : {
+          "start" : 1655204254596,
+          "stop" : 1655204291344,
+          "duration" : 36748
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "TNP-18 Verify the 'Video API' link in 'Products' tab dropdownlist works",
+        "uid" : "f12146c51d9bd6c3",
+        "parentUid" : "af8fabd4853dbb4e98807fea9dd98b71",
+        "status" : "broken",
+        "time" : {
+          "start" : 1655204334565,
+          "stop" : 1655204404207,
+          "duration" : 69642
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "TNP-22 Test the email validation on the Sign Up page with incorrect data",
+        "uid" : "d5eeccbf18e922f2",
+        "parentUid" : "af8fabd4853dbb4e98807fea9dd98b71",
+        "status" : "broken",
+        "time" : {
+          "start" : 1655204405000,
+          "stop" : 1655204436038,
+          "duration" : 31038
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "TNP-22 Test the email validation on the Sign Up page with incorrect data",
+        "uid" : "2d225e2bd190b8d5",
+        "parentUid" : "af8fabd4853dbb4e98807fea9dd98b71",
+        "status" : "broken",
+        "time" : {
+          "start" : 1655204768171,
+          "stop" : 1655204800057,
+          "duration" : 31886
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "TNP-25 Verify the Show/Hide password button",
+        "uid" : "44f35cb49c6b56bb",
+        "parentUid" : "af8fabd4853dbb4e98807fea9dd98b71",
+        "status" : "broken",
+        "time" : {
+          "start" : 1655204772439,
+          "stop" : 1655204804622,
+          "duration" : 32183
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "TNP-24 Test the password validation on the Sign Up page with incorrect data",
+        "uid" : "2daa9bcea9b4fcbb",
+        "parentUid" : "af8fabd4853dbb4e98807fea9dd98b71",
+        "status" : "broken",
+        "time" : {
+          "start" : 1655204801587,
+          "stop" : 1655204832921,
+          "duration" : 31334
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "af8fabd4853dbb4e98807fea9dd98b71"
+    }, {
+      "name" : "Timeout of 30000ms exceeded.",
+      "children" : [ {
+        "name" : "TNP-02 Verify the main page hovers",
+        "uid" : "9a9bebd6b7b27407",
+        "parentUid" : "243d80d303fd3cc7cb395edf69aec83a",
+        "status" : "broken",
+        "time" : {
+          "start" : 1655204039154,
+          "stop" : 1655204101706,
+          "duration" : 62552
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "TNP-31 Verify the currency was changed when the currency was changed in the listbox",
+        "uid" : "252e04c2eba08ced",
+        "parentUid" : "243d80d303fd3cc7cb395edf69aec83a",
+        "status" : "broken",
+        "time" : {
+          "start" : 1655204053297,
+          "stop" : 1655204098835,
+          "duration" : 45538
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "TNP-15 Verify the 'Wireless' link in 'Products' tab dropdownlist works",
+        "uid" : "9f16a22e05bda981",
+        "parentUid" : "243d80d303fd3cc7cb395edf69aec83a",
+        "status" : "broken",
+        "time" : {
+          "start" : 1655204292660,
+          "stop" : 1655204332995,
+          "duration" : 40335
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "TNP-33 Verify the twilio price calculator functionality",
+        "uid" : "8c95bc637e48342b",
+        "parentUid" : "243d80d303fd3cc7cb395edf69aec83a",
+        "status" : "broken",
+        "time" : {
+          "start" : 1655204449197,
+          "stop" : 1655204501917,
+          "duration" : 52720
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "TNP-31 Verify the currency was changed when the currency was changed in the listbox",
+        "uid" : "7411d27a3d64aa8c",
+        "parentUid" : "243d80d303fd3cc7cb395edf69aec83a",
+        "status" : "broken",
+        "time" : {
+          "start" : 1655204502654,
+          "stop" : 1655204534628,
+          "duration" : 31974
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "TNP-02 Verify the main page hovers",
+        "uid" : "7c4420f967c19617",
+        "parentUid" : "243d80d303fd3cc7cb395edf69aec83a",
+        "status" : "broken",
+        "time" : {
+          "start" : 1655204524402,
+          "stop" : 1655204558390,
+          "duration" : 33988
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "TNP-08 Verify the 'Voice API' card works",
+        "uid" : "161fa4273eee83c8",
+        "parentUid" : "243d80d303fd3cc7cb395edf69aec83a",
+        "status" : "broken",
+        "time" : {
+          "start" : 1655204580744,
+          "stop" : 1655204612806,
+          "duration" : 32062
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "TNP-20 Verify the Sign Up page",
+        "uid" : "7eba72dff14591e7",
+        "parentUid" : "243d80d303fd3cc7cb395edf69aec83a",
+        "status" : "broken",
+        "time" : {
+          "start" : 1655204734861,
+          "stop" : 1655204766871,
+          "duration" : 32010
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "TNP-29 Verify the error messages on the Sign Up page are dislayed with empty inputs registration",
+        "uid" : "6aab0abcb16174c4",
+        "parentUid" : "243d80d303fd3cc7cb395edf69aec83a",
+        "status" : "broken",
+        "time" : {
+          "start" : 1655204739751,
+          "stop" : 1655204771664,
+          "duration" : 31913
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "TNP-34 Verify the Get the full price breakdown overlap is displayed",
+        "uid" : "900184ce270ce713",
+        "parentUid" : "243d80d303fd3cc7cb395edf69aec83a",
+        "status" : "broken",
+        "time" : {
+          "start" : 1655204833474,
+          "stop" : 1655204864764,
+          "duration" : 31290
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "TNP-33 Verify the twilio price calculator functionality",
+        "uid" : "e9b5ddfffc816351",
+        "parentUid" : "243d80d303fd3cc7cb395edf69aec83a",
+        "status" : "broken",
+        "time" : {
+          "start" : 1655204835730,
+          "stop" : 1655204867276,
+          "duration" : 31546
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "243d80d303fd3cc7cb395edf69aec83a"
+    }, {
+      "name" : "Timeout of 30000ms exceeded while running fixture \"context\" teardown.",
+      "children" : [ {
+        "name" : "TNP-10 Verify the 'Explore our products' button in 'Powerful products' cards table works",
+        "uid" : "495d7b81e8c8e226",
+        "parentUid" : "ca7aacfe824d0f558b1feae530420068",
+        "status" : "broken",
+        "time" : {
+          "start" : 1655204207532,
+          "stop" : 1655204237546,
+          "duration" : 30014
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "TNP-11 Verify the 'See all products' link in 'Products' tab dropdownlist works",
+        "uid" : "98690817996bdc1d",
+        "parentUid" : "ca7aacfe824d0f558b1feae530420068",
+        "status" : "broken",
+        "time" : {
+          "start" : 1655204247234,
+          "stop" : 1655204277238,
+          "duration" : 30004
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "ca7aacfe824d0f558b1feae530420068"
+    }, {
+      "name" : "Timeout of 30000ms exceeded while running fixture \"page\" setup.",
+      "children" : [ {
+        "name" : "TNP-30 Verify the Elastic SIP Trunking Pricing page",
+        "uid" : "67d28a5896db122b",
+        "parentUid" : "5a75aa6c58af6cd6de8e1e52aeb63a90",
+        "status" : "broken",
+        "time" : {
+          "start" : 1655204475953,
+          "stop" : 1655204506199,
+          "duration" : 30246
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "5a75aa6c58af6cd6de8e1e52aeb63a90"
+    } ],
+    "uid" : "bdbf199525818fae7a8651db9eafe741"
+  }, {
+    "name" : "Product defects",
+    "children" : [ {
+      "name" : "locator.scrollIntoViewIfNeeded: Target page, context or browser has been closed",
+      "children" : [ {
+        "name" : "TNP-32 Verify the twilio price calculator page",
+        "uid" : "5e495e75c49b9645",
+        "parentUid" : "7d1fc2b014ceba1975f6c3b9905512d3",
+        "status" : "failed",
+        "time" : {
+          "start" : 1655203979686,
+          "stop" : 1655203989084,
+          "duration" : 9398
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "7d1fc2b014ceba1975f6c3b9905512d3"
+    }, {
+      "name" : "expect(received).toBeVisible()\nCall log:\n  - expect.toBeVisible with timeout 5000ms\n  - waiting for selector \"a[href*=\"/call-control/quickstart\"] >> nth=0\"\n",
+      "children" : [ {
+        "name" : "TNP-08 Verify the 'Voice API' card works",
+        "uid" : "595fc03011a184be",
+        "parentUid" : "bafedcf82789bfb5a0ff1c53edeb149e",
+        "status" : "failed",
+        "time" : {
+          "start" : 1655204177429,
+          "stop" : 1655204214636,
+          "duration" : 37207
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "bafedcf82789bfb5a0ff1c53edeb149e"
+    }, {
+      "name" : "expect(received).toBeVisible()\nCall log:\n  - expect.toBeVisible with timeout 5000ms\n  - waiting for selector \"a[href*=\"sim-card/point-of-sale\"]\"\n",
+      "children" : [ {
+        "name" : "TNP-07 Verify the 'Wireless' card works",
+        "uid" : "f9a7940afcd6f88c",
+        "parentUid" : "c551a906db6bd676d28e0237d3075663",
+        "status" : "failed",
+        "time" : {
+          "start" : 1655204566883,
+          "stop" : 1655204585308,
+          "duration" : 18425
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "c551a906db6bd676d28e0237d3075663"
+    }, {
+      "name" : "expect(received).toHaveValue(expected)\n\nExpected string: \"\"\nReceived string: serializes to the same string\nCall log:\n  - expect.toHaveValue with timeout 5000ms\n  - waiting for selector \"#FirstName\"\n",
+      "children" : [ {
+        "name" : "TNP-35 Verify all inputs in breakdown overlap are required",
+        "uid" : "169c037fcdae5ff6",
+        "parentUid" : "6b7f990c886897385fcf6dd1558b9619",
+        "status" : "failed",
+        "time" : {
+          "start" : 1655204865957,
+          "stop" : 1655204883445,
+          "duration" : 17488
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "6b7f990c886897385fcf6dd1558b9619"
+    } ],
+    "uid" : "8fb3a91ba5aaf9de24cc8a92edc82b5d"
+  } ]
+}
