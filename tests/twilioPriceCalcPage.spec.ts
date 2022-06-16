@@ -26,20 +26,19 @@ test.describe('testing the twilio price calculator page', () => {
     test('TNP-33 Verify the twilio price calculator functionality', async ({ page }) => {
         let twilioPriceCalcPage = new TwilioPriceCalcPage(page);
         let calcInputs = [
-            { id: 0, locator: twilioPriceCalcPage.sendSmsInput },
-            { id: 1, locator: twilioPriceCalcPage.receiveSmsInput },
-            { id: 2, locator: twilioPriceCalcPage.sendMmsInput },
-            { id: 3, locator: twilioPriceCalcPage.receiveMmsInput }
+            twilioPriceCalcPage.sendSmsInput,
+            twilioPriceCalcPage.receiveSmsInput,
+            twilioPriceCalcPage.sendMmsInput,
+            twilioPriceCalcPage.receiveMmsInput
         ]
         await twilioPriceCalcPage.receiveMmsInput.scrollIntoViewIfNeeded();
         await twilioPriceCalcPage.page.waitForSelector('#send-sms');
         for (let i = 0; i < calcInputs.length; i++) {
-            let element = calcInputs.find(e => e.id === i);
-            if (element == undefined) {
+            if (calcInputs[i] == undefined) {
                 throw new Error('"element" is undefined');
             }
-            await twilioPriceCalcPage.checkSavingsDecrease(element.locator);
-            await twilioPriceCalcPage.checkSavingsIncrease(element.locator);
+            await twilioPriceCalcPage.checkSavingsDecrease(calcInputs[i]);
+            await twilioPriceCalcPage.checkSavingsIncrease(calcInputs[i]);
         }
     })
 

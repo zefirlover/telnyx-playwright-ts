@@ -10,10 +10,7 @@ const arrProducts = [
     { id: 4, link: 'sip-trunks', checkText: 'SIP Trunks' },
     { id: 5, link: 'storage', checkText: 'cloud storage' }
 ];
-const arrIncorrectEmails = [
-    { id: 0, email: 'testAtgmail.com' },
-    { id: 1, email: '@gmail' }
-]
+const arrIncorrectEmails = [ 'testAtgmail.com', '@gmail' ]
 
 test.describe('main page testing', () => {
     const randomEmail = `${Helpers.makeLorem()}@gmail.com`;
@@ -28,7 +25,7 @@ test.describe('main page testing', () => {
         let mainPage = new MainPage(page);
         await expect(mainPage.emailConfirmForm).toBeVisible();
     })
-    
+
     test(`TNP-03-10,42 part 1 Verify the 'Powerful products' cards table and it cards`, async ({ page }) => {
         let mainPage = new MainPage(page);
         for (let i = 0; i < arrProducts.length - 3; i++) {
@@ -72,13 +69,12 @@ test.describe('main page testing', () => {
         let mainPage = new MainPage(page);
         await expect(mainPage.emailInput).toBeVisible();
         for (let i = 0; i < arrIncorrectEmails.length; i++) {
-            let element = arrIncorrectEmails.find(e => e.id === i);
-            if (element == undefined) {
+            if (arrIncorrectEmails[i] == undefined) {
                 throw new Error('"element" is undefined');
             }
             await expect(mainPage.emailInput).toBeVisible();
             await expect(mainPage.tryForFreeButton).toBeVisible();
-            await mainPage.fillEmailInput(element.email);
+            await mainPage.fillEmailInput(arrIncorrectEmails[i]);
             await mainPage.clickTryForFreeButton();
             await expect(mainPage.emailInput).toBeVisible();
             await expect(mainPage.tryForFreeButton).toBeVisible();

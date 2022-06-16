@@ -1,21 +1,17 @@
 import { test, expect } from '@playwright/test';
 import { SignUpPage } from '../../telnyx-playwright-ts/pages/SignUp.page';
 import { MainPage } from '../pages/mainpage/Main.page';
-const arrIncorrectEmails = [
-    { id: 0, email: 'testAtgmail.com' },
-    { id: 1, email: '@gmail' },
-    { id: 2, email: 'test@gmailcom' }
-];
+const arrIncorrectEmails = [ 'testAtgmail.com', '@gmail', 'test@gmailcom' ];
 const arrIncorrectPasswords = [
-    { id: 0, password: 'h' },
-    { id: 1, password: 'huskthebest' },
-    { id: 2, password: 'huskthebestt' },
-    { id: 3, password: 'HUSKTHEBEST' },
-    { id: 4, password: '7' },
-    { id: 5, password: '*' },
-    { id: 6, password: 'HuskTheBestt' },
-    { id: 7, password: 'HuskTheBest75' },
-    { id: 8, password: 'HuskTheBest_' }
+    'h',
+    'huskthebest',
+    'huskthebestt',
+    'HUSKTHEBEST',
+    '7',
+    '*',
+    'HuskTheBestt',
+    'HuskTheBest75',
+    'HuskTheBest_'
 ]
 
 test.describe('sign up page testing', () => {
@@ -63,11 +59,10 @@ test.describe('sign up page testing', () => {
         let signUpPage = new SignUpPage(page);
         await expect(signUpPage.emailInput).toBeVisible();
         for (let i = 0; i < arrIncorrectEmails.length; i++) {
-            let element = arrIncorrectEmails.find(e => e.id === i);
-            if (element == undefined) {
+            if (arrIncorrectEmails[i] == undefined) {
                 throw new Error('"element" is undefined');
             }
-            await signUpPage.fillEmailInput(element.email);
+            await signUpPage.fillEmailInput(arrIncorrectEmails[i]);
             await signUpPage.clickNameInput();
             await expect(signUpPage.emailErrorMessage).toBeVisible();
         }
@@ -88,33 +83,32 @@ test.describe('sign up page testing', () => {
         await expect(signUpPage.passwordInput).toBeVisible();
         await signUpPage.clickPasswordInput();
         for (let i = 0; i < arrIncorrectPasswords.length; i++) {
-            let element = arrIncorrectPasswords.find(e => e.id === i);
-            if (element == undefined) {
+            if (arrIncorrectPasswords[i] == undefined) {
                 throw new Error('"element" is undefined');
             }
-            if (/[A-Z]/.test(element.password)) {
-                await signUpPage.fillPasswordInput(element.password);
+            if (/[A-Z]/.test(arrIncorrectPasswords[i])) {
+                await signUpPage.fillPasswordInput(arrIncorrectPasswords[i]);
                 await expect(signUpPage.passwordRequirementErrors.nth(4)).toHaveAttribute('aria-hidden', 'true');
                 await signUpPage.verifyErrorsAreLessThanFour();
             }
-            if (element.password.length >= 12) {
-                await signUpPage.fillPasswordInput(element.password);
+            if (arrIncorrectPasswords[i].length >= 12) {
+                await signUpPage.fillPasswordInput(arrIncorrectPasswords[i]);
                 await expect(signUpPage.passwordRequirementErrors.nth(1)).toHaveAttribute('aria-hidden', 'true');
                 await signUpPage.verifyErrorsAreLessThanFour();
             }
-            if (/[0-9]/.test(element.password)) {
-                await signUpPage.fillPasswordInput(element.password);
+            if (/[0-9]/.test(arrIncorrectPasswords[i])) {
+                await signUpPage.fillPasswordInput(arrIncorrectPasswords[i]);
                 await expect(signUpPage.passwordRequirementErrors.nth(2)).toHaveAttribute('aria-hidden', 'true');
                 await signUpPage.verifyErrorsAreLessThanFour();
             }
-            if (/[*|\":<>[\]{}`\\()';@&$]/.test(element.password)) {
-                await signUpPage.fillPasswordInput(element.password);
+            if (/[*|\":<>[\]{}`\\()';@&$]/.test(arrIncorrectPasswords[i])) {
+                await signUpPage.fillPasswordInput(arrIncorrectPasswords[i]);
                 await expect(signUpPage.passwordRequirementErrors.nth(3)).toHaveAttribute('aria-hidden', 'true');
                 await signUpPage.verifyErrorsAreLessThanFour();
             }
-            if (!/[A-Z]/.test(element.password) && element.password.length < 12 
-                && !/[0-9]/.test(element.password) && !/[*|\":<>[\]{}`\\()';@&$]/.test(element.password)) {
-                await signUpPage.fillPasswordInput(element.password);
+            if (!/[A-Z]/.test(arrIncorrectPasswords[i]) && arrIncorrectPasswords[i].length < 12 
+                && !/[0-9]/.test(arrIncorrectPasswords[i]) && !/[*|\":<>[\]{}`\\()';@&$]/.test(arrIncorrectPasswords[i])) {
+                await signUpPage.fillPasswordInput(arrIncorrectPasswords[i]);
                 await expect(signUpPage.passwordErrors).toHaveCount(4);
             }
         }

@@ -1,13 +1,7 @@
 import { test, expect } from '@playwright/test';
 import { MainPage } from '../pages/mainpage/Main.page';
 import { Header } from '../pages/mainpage/Header.page';
-const arrNavBarElements = [
-    { id: 0, name: 'Products' },
-    { id: 1, name: 'Solutions' },
-    { id: 2, name: 'Resources' },
-    { id: 3, name: 'Company' },
-    { id: 4, name: 'Pricing' }
-]
+const arrNavBarElements = [ 'Products', 'Solutions', 'Resources', 'Company', 'Pricing' ]
 const arrProducts = [
     { id: 0, link: 'sip-trunks', checkText: 'SIP Trunks' },
     { id: 1, link: 'voice-api', checkText: 'Voice API' },
@@ -28,9 +22,8 @@ test.describe('header testing', () => {
 
     test('TNP-02 Verify the header hovers', async ({ page }) => {
         for (let i = 0; i < arrNavBarElements.length; i++) {
-            let element = arrNavBarElements.find(e => e.id === i);
-            let tabLocator = page.locator(`//*[@tabindex="0"]/span[text()="${element?.name}"]`);
-            let linkLocator = page.locator(`header *> li *> a[href*="/${element?.name.toLowerCase()}"]`).first();
+            let tabLocator = page.locator(`//*[@tabindex="0"]/span[text()="${arrNavBarElements[i]}"]`);
+            let linkLocator = page.locator(`header *> li *> a[href*="/${arrNavBarElements[i].toLowerCase()}"]`).first();
             await expect(tabLocator).toBeVisible();
             await expect(linkLocator).not.toBeVisible();
             await tabLocator.hover();
