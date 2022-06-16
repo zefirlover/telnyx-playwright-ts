@@ -1,15 +1,24 @@
 import { test, expect } from '@playwright/test';
-import { SignUpPage } from '../pages/signUp.page';
+import { SignUpPage } from '../../telnyx-playwright-ts/pages/SignUp.page';
 import { MainPage } from '../pages/mainpage/Main.page';
-import Helpers from '../helpers/helper';
+const arrIncorrectEmails = [ 'testAtgmail.com', '@gmail', 'test@gmailcom' ];
+const arrIncorrectPasswords = [
+    'h',
+    'huskthebest',
+    'huskthebestt',
+    'HUSKTHEBEST',
+    '7',
+    '*',
+    'HuskTheBestt',
+    'HuskTheBest75',
+    'HuskTheBest_'
+]
 
 test.describe('sign up page testing', () => {
-
     test.beforeEach(async ({ page }) => {
-        let mainPage = new MainPage(page);
         let signUpPage = new SignUpPage(page);
         await signUpPage.visit();
-        await mainPage.checkCookiesMessageBox();
+        await signUpPage.checkCookiesMessageBox();
     })
 
     test('TNP-20 Verify the Sign Up page', async ({ page }) => {
@@ -49,15 +58,14 @@ test.describe('sign up page testing', () => {
     test('TNP-22 Test the email validation on the Sign Up page with incorrect data', async ({ page }) => {
         let signUpPage = new SignUpPage(page);
         await expect(signUpPage.emailInput).toBeVisible();
-        await signUpPage.fillEmailInput('testatgmail.com');
-        await signUpPage.clickNameInput();
-        await expect(signUpPage.emailErrorMessage).toBeVisible();
-        await signUpPage.fillEmailInput('test@gmailcom');
-        await signUpPage.clickNameInput();
-        await expect(signUpPage.emailErrorMessage).toBeVisible();
-        await signUpPage.fillEmailInput('@gmail');
-        await signUpPage.clickNameInput();
-        await expect(signUpPage.emailErrorMessage).toBeVisible();
+        for (let i = 0; i < arrIncorrectEmails.length; i++) {
+            if (arrIncorrectEmails[i] == undefined) {
+                throw new Error('"element" is undefined');
+            }
+            await signUpPage.fillEmailInput(arrIncorrectEmails[i]);
+            await signUpPage.clickNameInput();
+            await expect(signUpPage.emailErrorMessage).toBeVisible();
+        }
     })
 
     test('TNP-25 Verify the Show/Hide password button', async ({ page }) => {
@@ -74,37 +82,35 @@ test.describe('sign up page testing', () => {
         let signUpPage = new SignUpPage(page);
         await expect(signUpPage.passwordInput).toBeVisible();
         await signUpPage.clickPasswordInput();
-        await expect(signUpPage.passwordRequirements).toBeVisible();
-        await expect(signUpPage.passwordErrors).toHaveCount(4);
-        await signUpPage.fillPasswordInput('h');
-        await expect(signUpPage.passwordErrors).toHaveCount(4);
-        await signUpPage.fillPasswordInput('huskthebest');
-        await expect(signUpPage.passwordErrors).toHaveCount(4);
-        await signUpPage.fillPasswordInput('huskthebestt');
-        await expect(signUpPage.passwordRequirementErrors.nth(1)).toHaveAttribute('aria-hidden', 'true');
-        await expect(signUpPage.passwordErrors).toHaveCount(3);
-        await signUpPage.fillPasswordInput('HUSKTHEBEST');
-        await expect(signUpPage.passwordRequirementErrors.nth(4)).toHaveAttribute('aria-hidden', 'true');
-        await expect(signUpPage.passwordErrors).toHaveCount(3);
-        await signUpPage.fillPasswordInput('7');
-        await expect(signUpPage.passwordRequirementErrors.nth(2)).toHaveAttribute('aria-hidden', 'true');
-        await expect(signUpPage.passwordErrors).toHaveCount(3);
-        await signUpPage.fillPasswordInput('*');
-        await expect(signUpPage.passwordRequirementErrors.nth(3)).toHaveAttribute('aria-hidden', 'true');
-        await expect(signUpPage.passwordErrors).toHaveCount(3);
-        await signUpPage.fillPasswordInput('HuskTheBestt');
-        await expect(signUpPage.passwordRequirementErrors.nth(1)).toHaveAttribute('aria-hidden', 'true');
-        await expect(signUpPage.passwordRequirementErrors.nth(4)).toHaveAttribute('aria-hidden', 'true');
-        await expect(signUpPage.passwordErrors).toHaveCount(2);
-        await signUpPage.fillPasswordInput('HuskTheBest75');
-        await expect(signUpPage.passwordRequirementErrors.nth(1)).toHaveAttribute('aria-hidden', 'true');
-        await expect(signUpPage.passwordRequirementErrors.nth(2)).toHaveAttribute('aria-hidden', 'true');
-        await expect(signUpPage.passwordRequirementErrors.nth(4)).toHaveAttribute('aria-hidden', 'true');
-        await expect(signUpPage.passwordErrors).toHaveCount(1);
-        await signUpPage.fillPasswordInput('HuskTheBest_');
-        await expect(signUpPage.passwordRequirementErrors.nth(1)).toHaveAttribute('aria-hidden', 'true');
-        await expect(signUpPage.passwordRequirementErrors.nth(3)).toHaveAttribute('aria-hidden', 'true');
-        await expect(signUpPage.passwordRequirementErrors.nth(4)).toHaveAttribute('aria-hidden', 'true');
-        await expect(signUpPage.passwordErrors).toHaveCount(1);
+        for (let i = 0; i < arrIncorrectPasswords.length; i++) {
+            if (arrIncorrectPasswords[i] == undefined) {
+                throw new Error('"element" is undefined');
+            }
+            if (/[A-Z]/.test(arrIncorrectPasswords[i])) {
+                await signUpPage.fillPasswordInput(arrIncorrectPasswords[i]);
+                await expect(signUpPage.passwordRequirementErrors.nth(4)).toHaveAttribute('aria-hidden', 'true');
+                await signUpPage.verifyErrorsAreLessThanFour();
+            }
+            if (arrIncorrectPasswords[i].length >= 12) {
+                await signUpPage.fillPasswordInput(arrIncorrectPasswords[i]);
+                await expect(signUpPage.passwordRequirementErrors.nth(1)).toHaveAttribute('aria-hidden', 'true');
+                await signUpPage.verifyErrorsAreLessThanFour();
+            }
+            if (/[0-9]/.test(arrIncorrectPasswords[i])) {
+                await signUpPage.fillPasswordInput(arrIncorrectPasswords[i]);
+                await expect(signUpPage.passwordRequirementErrors.nth(2)).toHaveAttribute('aria-hidden', 'true');
+                await signUpPage.verifyErrorsAreLessThanFour();
+            }
+            if (/[*|\":<>[\]{}`\\()';@&$]/.test(arrIncorrectPasswords[i])) {
+                await signUpPage.fillPasswordInput(arrIncorrectPasswords[i]);
+                await expect(signUpPage.passwordRequirementErrors.nth(3)).toHaveAttribute('aria-hidden', 'true');
+                await signUpPage.verifyErrorsAreLessThanFour();
+            }
+            if (!/[A-Z]/.test(arrIncorrectPasswords[i]) && arrIncorrectPasswords[i].length < 12 
+                && !/[0-9]/.test(arrIncorrectPasswords[i]) && !/[*|\":<>[\]{}`\\()';@&$]/.test(arrIncorrectPasswords[i])) {
+                await signUpPage.fillPasswordInput(arrIncorrectPasswords[i]);
+                await expect(signUpPage.passwordErrors).toHaveCount(4);
+            }
+        }
     })
 })

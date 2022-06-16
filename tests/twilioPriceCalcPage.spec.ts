@@ -1,14 +1,16 @@
 import { test, expect } from '@playwright/test';
-import { MainPage } from '../pages/mainpage/Main.page';
 import { ElasticSipPage } from '../pages/ElasticSip.page';
 import { TwilioPriceCalcPage } from '../pages/TwilioPriceCalc.page';
 
 test.describe('testing the twilio price calculator page', () => {
     test.beforeEach(async ({ page }) => {
-        let mainPage = new MainPage(page);
         let twilioPriceCalcPage = new TwilioPriceCalcPage(page);
         await twilioPriceCalcPage.visit();
-        await mainPage.checkCookiesMessageBox();
+        await twilioPriceCalcPage.checkCookiesMessageBox();
+        await twilioPriceCalcPage.scrollToCalculatorDiv();
+        await twilioPriceCalcPage.clickMessagingApiPlate();
+        await twilioPriceCalcPage.continueButton.click();
+        await twilioPriceCalcPage.continueButtonByText.click();
     })
 
     test('TNP-32 Verify the twilio price calculator page', async ({ page }) => {
@@ -23,36 +25,31 @@ test.describe('testing the twilio price calculator page', () => {
 
     test('TNP-33 Verify the twilio price calculator functionality', async ({ page }) => {
         let twilioPriceCalcPage = new TwilioPriceCalcPage(page);
-        await twilioPriceCalcPage.scrollToCalculatorDiv();
-        await twilioPriceCalcPage.clickMessagingApiPlate();
-        await twilioPriceCalcPage.clickContinueButton();
-        await twilioPriceCalcPage.clickContinueButton();
-        await twilioPriceCalcPage.checkSavingsDecrease(twilioPriceCalcPage.decreaseFirstOptionButton);
-        await twilioPriceCalcPage.checkSavingsDecrease(twilioPriceCalcPage.decreaseSecondOptionButton);
-        await twilioPriceCalcPage.checkSavingsDecrease(twilioPriceCalcPage.decreaseThirdOptionButton);
-        await twilioPriceCalcPage.checkSavingsIncrease(twilioPriceCalcPage.increaseFirstOptionButton);
-        await twilioPriceCalcPage.checkSavingsIncrease(twilioPriceCalcPage.increaseSecondOptionButton);
-        await twilioPriceCalcPage.checkSavingsIncrease(twilioPriceCalcPage.increaseThirdOptionButton);
+        let calcInputs = [
+            twilioPriceCalcPage.sendSmsInput,
+            twilioPriceCalcPage.receiveSmsInput,
+            twilioPriceCalcPage.sendMmsInput,
+            twilioPriceCalcPage.receiveMmsInput
+        ]
+        await twilioPriceCalcPage.receiveMmsInput.scrollIntoViewIfNeeded();
+        await twilioPriceCalcPage.page.waitForSelector('#send-sms');
+        for (let i = 0; i < calcInputs.length; i++) {
+            if (calcInputs[i] == undefined) {
+                throw new Error('"element" is undefined');
+            }
+            await twilioPriceCalcPage.checkSavingsDecrease(calcInputs[i]);
+            await twilioPriceCalcPage.checkSavingsIncrease(calcInputs[i]);
+        }
     })
 
     test('TNP-34 Verify the Get the full price breakdown overlap is displayed', async ({ page }) => {
         let twilioPriceCalcPage = new TwilioPriceCalcPage(page);
-        await twilioPriceCalcPage.scrollToCalculatorDiv();
-        await twilioPriceCalcPage.messagingApiPlate.click();
-        await twilioPriceCalcPage.clickMessagingApiPlate();
-        await twilioPriceCalcPage.clickContinueButton();
-        await twilioPriceCalcPage.clickContinueButton();
         await twilioPriceCalcPage.scrollToSubmitButton();
         await expect(twilioPriceCalcPage.emailInput).toBeVisible();
     })
 
     test('TNP-35 Verify all inputs in breakdown overlap are required', async ({ page }) => {
         let twilioPriceCalcPage = new TwilioPriceCalcPage(page);
-        await twilioPriceCalcPage.scrollToCalculatorDiv();
-        await twilioPriceCalcPage.messagingApiPlate.click();
-        await twilioPriceCalcPage.clickMessagingApiPlate();
-        await twilioPriceCalcPage.clickContinueButton();
-        await twilioPriceCalcPage.clickContinueButton();
         await twilioPriceCalcPage.scrollToSubmitButton();
         await expect(twilioPriceCalcPage.firstNameInput).toHaveValue('');
         await expect(twilioPriceCalcPage.lastNameInput).toHaveValue('');

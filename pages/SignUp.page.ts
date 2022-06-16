@@ -1,6 +1,7 @@
 import { Page, Locator } from '@playwright/test';
+import { BasePage } from './Base.page';
 
-export class SignUpPage {
+export class SignUpPage extends BasePage {
     readonly page: Page;
     readonly emailInput: Locator;
     readonly nameInput: Locator;
@@ -16,6 +17,7 @@ export class SignUpPage {
     readonly passwordRequirementErrors: Locator;
 
     constructor(page: Page) {
+        super(page);
         this.page = page;
         this.emailInput = page.locator('#email');
         this.nameInput = page.locator('#full_name');
@@ -32,7 +34,7 @@ export class SignUpPage {
     }
 
     async visit() {
-        await this.page.goto('/sign-up');
+        await this.page.goto('https://telnyx.com/sign-up');
     }
 
     async clickCreateAccountButton() {
@@ -61,5 +63,11 @@ export class SignUpPage {
 
     async fillPasswordInput(someText: string) {
         await this.passwordInput.fill(someText);
+    }
+
+    async verifyErrorsAreLessThanFour() {
+        if (await this.passwordErrors.count() >= 4) {
+            throw new Error('too many password errors');
+        }
     }
 }
