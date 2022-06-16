@@ -28,17 +28,29 @@ test.describe('main page testing', () => {
         let mainPage = new MainPage(page);
         await expect(mainPage.emailConfirmForm).toBeVisible();
     })
-
-    test(`TNP-03-10,42 Verify the 'Powerful products' cards table and it cards`, async ({ page }) => {
+    
+    test(`TNP-03-10,42 part 1 Verify the 'Powerful products' cards table and it cards`, async ({ page }) => {
         let mainPage = new MainPage(page);
-        for (let i = 0; i < arrProducts.length; i++) {
+        for (let i = 0; i < arrProducts.length - 3; i++) {
             let element = arrProducts.find(e => e.id === i);
             let cardLink = page.locator(`main *> a[href*="/${element?.link}"]`);
-            let headerText = page.locator(`
-                //h1//strong[contains(text(), '${element?.checkText}')]|//h1//span[contains(text(), '${element?.checkText}')]
-            `)
+            let headerString = `//h1//strong[contains(text(), '${element?.checkText}')]|//h1//span[contains(text(), '${element?.checkText}')]`;
+            let headerText = page.locator(headerString);
             await mainPage.scrollToPowerfulProducts();
-            await expect(cardLink).toBeVisible();
+            await cardLink.click();
+            await expect(headerText).toBeVisible();
+            await mainPage.visit();
+        }
+    })
+
+    test(`TNP-03-10,42 part 2 Verify the 'Powerful products' cards table and it cards`, async ({ page }) => {
+        let mainPage = new MainPage(page);
+        for (let i = 3; i < arrProducts.length - 3; i++) {
+            let element = arrProducts.find(e => e.id === i);
+            let cardLink = page.locator(`main *> a[href*="/${element?.link}"]`);
+            let headerString = `//h1//strong[contains(text(), '${element?.checkText}')]|//h1//span[contains(text(), '${element?.checkText}')]`;
+            let headerText = page.locator(headerString);
+            await mainPage.scrollToPowerfulProducts();
             await cardLink.click();
             await expect(headerText).toBeVisible();
             await mainPage.visit();

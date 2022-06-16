@@ -38,9 +38,24 @@ test.describe('header testing', () => {
         }
     })
 
-    test(`TNP-11-16,41 Verify links in 'Products' tab dropdownlist works`, async ({ page }) => {
+    test(`TNP-11-16,41 part 1 Verify links in 'Products' tab dropdownlist works`, async ({ page }) => {
         let header = new Header(page);
-        for (let i = 0; i < arrProducts.length; i++) {
+        for (let i = 0; i < arrProducts.length - 4; i++) {
+            let element = arrProducts.find(e => e.id === i);
+            let redirectLink = page.locator(`header *> li *> a[href*="/${element?.link}"]`).first();
+            let headerText = page.locator(`
+                //h1//strong[contains(text(), '${element?.checkText}')]|//h1//span[contains(text(), '${element?.checkText}')]
+            `)
+            await header.productsTab.hover();
+            await expect(redirectLink).toBeVisible();
+            await redirectLink.click();
+            await expect(headerText).toBeVisible();
+        }
+    })
+
+    test(`TNP-11-16,41 part 2 Verify links in 'Products' tab dropdownlist works`, async ({ page }) => {
+        let header = new Header(page);
+        for (let i = 4; i < arrProducts.length - 4; i++) {
             let element = arrProducts.find(e => e.id === i);
             let redirectLink = page.locator(`header *> li *> a[href*="/${element?.link}"]`).first();
             let headerText = page.locator(`

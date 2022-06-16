@@ -5,7 +5,7 @@ export class TwilioPriceCalcPage extends BasePage {
     readonly page: Page;
     readonly messagingApiPlate: Locator;
     readonly continueButton: Locator;
-    readonly calculatorDiv: Locator;
+    readonly continueButtonByText: Locator;
     readonly inputsList: Locator;
     readonly yourSavingsText: Locator;
     readonly sendSmsInput: Locator;
@@ -25,7 +25,7 @@ export class TwilioPriceCalcPage extends BasePage {
     constructor (page: Page) {
         super(page);
         this.page = page;
-        this.calculatorDiv = page.locator('//button[text()="Continue"]');
+        this.continueButtonByText = page.locator('//button[text()="Continue"]');
         this.messagingApiPlate = page.locator('[class="sc-a87e7459-1 gFVaeZ"]').nth(0);
         this.continueButton = page.locator('main *> button:not([aria-label])');
         this.inputsList = page.locator('[class="sc-a87e7459-0 fkuRxe"]');
@@ -62,7 +62,7 @@ export class TwilioPriceCalcPage extends BasePage {
     }
 
     async clickContinueButton() {
-        let box = await this.calculatorDiv.boundingBox();
+        let box = await this.continueButtonByText.boundingBox();
         if (box == null) {
             throw new Error('"box" is null. Possibly, element is not visible');
         }
@@ -78,9 +78,9 @@ export class TwilioPriceCalcPage extends BasePage {
     }
 
     async checkSavingsDecrease(inputLocator: Locator) {
-        await expect(this.yourSavingsText).toBeVisible({ timeout: 10000 });
+        await expect(this.yourSavingsText).toBeVisible();
         await expect(inputLocator).toBeVisible();
-        let moreSavingsStr = await this.yourSavingsText.innerText({ timeout: 2000 });
+        let moreSavingsStr = await this.yourSavingsText.innerText();
         let inputValue = await inputLocator.inputValue();
         let insertData: number;
         +inputValue <= 0? insertData = 0: insertData = +inputValue - 25000;

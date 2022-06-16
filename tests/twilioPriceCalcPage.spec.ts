@@ -9,10 +9,8 @@ test.describe('testing the twilio price calculator page', () => {
         await twilioPriceCalcPage.checkCookiesMessageBox();
         await twilioPriceCalcPage.scrollToCalculatorDiv();
         await twilioPriceCalcPage.clickMessagingApiPlate();
-        //await twilioPriceCalcPage.clickContinueButton();
         await twilioPriceCalcPage.continueButton.click();
-        await twilioPriceCalcPage.calculatorDiv.click();
-        //await twilioPriceCalcPage.clickContinueButton();
+        await twilioPriceCalcPage.continueButtonByText.click();
     })
 
     test('TNP-32 Verify the twilio price calculator page', async ({ page }) => {
@@ -24,7 +22,7 @@ test.describe('testing the twilio price calculator page', () => {
         await twilioPriceCalcPage.scrollToCalculatorDiv();
         await expect(twilioPriceCalcPage.inputsList).toBeVisible();
     })
-/* fix this piece of shit later
+
     test('TNP-33 Verify the twilio price calculator functionality', async ({ page }) => {
         let twilioPriceCalcPage = new TwilioPriceCalcPage(page);
         let calcInputs = [
@@ -33,16 +31,18 @@ test.describe('testing the twilio price calculator page', () => {
             { id: 2, locator: twilioPriceCalcPage.sendMmsInput },
             { id: 3, locator: twilioPriceCalcPage.receiveMmsInput }
         ]
+        await twilioPriceCalcPage.receiveMmsInput.scrollIntoViewIfNeeded();
+        await twilioPriceCalcPage.page.waitForSelector('#send-sms');
         for (let i = 0; i < calcInputs.length; i++) {
             let element = calcInputs.find(e => e.id === i);
             if (element == undefined) {
                 throw new Error('"element" is undefined');
             }
-            twilioPriceCalcPage.checkSavingsDecrease(element.locator);
-            twilioPriceCalcPage.checkSavingsIncrease(element.locator);
+            await twilioPriceCalcPage.checkSavingsDecrease(element.locator);
+            await twilioPriceCalcPage.checkSavingsIncrease(element.locator);
         }
     })
-*/
+
     test('TNP-34 Verify the Get the full price breakdown overlap is displayed', async ({ page }) => {
         let twilioPriceCalcPage = new TwilioPriceCalcPage(page);
         await twilioPriceCalcPage.scrollToSubmitButton();
