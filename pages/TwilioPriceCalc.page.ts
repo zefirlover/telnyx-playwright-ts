@@ -6,13 +6,18 @@ export class TwilioPriceCalcPage extends BasePage {
     readonly messagingApiPlate: Locator;
     readonly continueButton: Locator;
     readonly continueButtonByText: Locator;
+    readonly submitButton: Locator;
     readonly inputsList: Locator;
     readonly yourSavingsText: Locator;
     readonly sendSmsInput: Locator;
     readonly receiveSmsInput: Locator;
     readonly sendMmsInput: Locator;
     readonly receiveMmsInput: Locator;
-    readonly submitButton: Locator;
+    readonly inboundLocalInput: Locator;
+    readonly inboundTollFreeInput: Locator;
+    readonly outboundInput: Locator;
+    readonly inboundCallInput: Locator;
+    readonly outboundCallInput: Locator;
     readonly emailInput: Locator;
     readonly firstNameInput: Locator;
     readonly lastNameInput: Locator;
@@ -21,6 +26,7 @@ export class TwilioPriceCalcPage extends BasePage {
     readonly lastNameError: Locator;
     readonly emailError: Locator;
     readonly websiteError: Locator;
+    readonly formButton: Locator;
 
     constructor (page: Page) {
         super(page);
@@ -28,13 +34,18 @@ export class TwilioPriceCalcPage extends BasePage {
         this.continueButtonByText = page.locator('//button[text()="Continue"]');
         this.messagingApiPlate = page.locator('[class="sc-a87e7459-1 gFVaeZ"]').nth(0);
         this.continueButton = page.locator('main *> button:not([aria-label])');
+        this.submitButton = page.locator('button[type="submit"]');
         this.inputsList = page.locator('[class="sc-a87e7459-0 fkuRxe"]');
         this.yourSavingsText = page.locator('[class="Text-sc-5o8owa-0 sc-c7d3cfaa-1 gBsjXt fdlLDD"]');
         this.sendSmsInput = page.locator('#send-sms');
         this.receiveSmsInput = page.locator('#receive-sms');
         this.sendMmsInput = page.locator('#send-mms');
         this.receiveMmsInput = page.locator('#receive-mms');
-        this.submitButton = page.locator('button[type="submit"]');
+        this.inboundLocalInput = page.locator('#receive-inbound-calls-to-local-numbers');
+        this.inboundTollFreeInput = page.locator('#receive-inbound-calls-to-toll-free-numbers');
+        this.outboundInput = page.locator('#make-outbound-calls');
+        this.inboundCallInput = page.locator('#receive-inbound-calls-with-call-control');
+        this.outboundCallInput = page.locator('#make-outbound-calls-with-call-control');
         this.emailInput = page.locator('#Email');
         this.firstNameInput = page.locator('#FirstName');
         this.lastNameInput = page.locator('#LastName');
@@ -59,6 +70,15 @@ export class TwilioPriceCalcPage extends BasePage {
         if (await checkedPlate.count() == 0) {
             this.messagingApiPlate.click();
         }
+    }
+
+    async clickOnPlate(plateText: string) {
+        let plateLocator = this.page.locator(`//div[text()="${plateText}"]/parent::div`)
+        let box = await plateLocator.boundingBox();
+        if (box == null) {
+            throw new Error('"box" is null. Possibly, element is not visible');
+        }
+        await this.page.mouse.click(box.x + box.width / 2, box.y + box.height / 2);
     }
 
     async clickContinueButton() {
