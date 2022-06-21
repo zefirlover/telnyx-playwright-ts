@@ -88,7 +88,7 @@ export class TwilioPriceCalcPage extends BasePage {
         }
         let displayedContinueButton = this.page.locator('button[class*="hBNXWZ"]');
         await this.page.mouse.click(box.x + box.width / 2, box.y + box.height / 2);
-        if(await displayedContinueButton.count() >= 1) {
+        if (await displayedContinueButton.count() >= 1) {
             await this.page.mouse.click(box.x + box.width / 2, box.y + box.height / 2);
         }
     }
@@ -109,7 +109,7 @@ export class TwilioPriceCalcPage extends BasePage {
         let lessSavingsStr = await this.yourSavingsText.innerText();
         let moreSavings = parseFloat(moreSavingsStr);
         let lessSavings = parseFloat(lessSavingsStr);
-        if(moreSavings <= lessSavings) {
+        if (moreSavings <= lessSavings) {
             throw new Error('lessSavings number cannot be bigger or equal to moreSavings number');
         }
     }
@@ -123,7 +123,7 @@ export class TwilioPriceCalcPage extends BasePage {
         let lessSavingsStr = await this.yourSavingsText.innerText();
         let moreSavings = parseFloat(moreSavingsStr);
         let lessSavings = parseFloat(lessSavingsStr);
-        if(moreSavings >= lessSavings) {
+        if (moreSavings >= lessSavings) {
             throw new Error('lessSavings number cannot be bigger or equal to moreSavings number');
         }
     }

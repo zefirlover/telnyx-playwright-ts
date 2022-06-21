@@ -77,7 +77,7 @@ test.describe('testing the twilio price calculator page', () => {
             await twilioPriceCalcPage.submitButton.click();
             await expect(twilioPriceCalcPage.firstNameError).not.toBeVisible();
             await expect(twilioPriceCalcPage.lastNameError).not.toBeVisible();
-            await expect(twilioPriceCalcPage.emailError).not.toBeVisible();
+            await expect(twilioPriceCalcPage.emailError).not.toBeVisible(); 
             await expect(twilioPriceCalcPage.websiteError).toBeVisible();
         }
     })
