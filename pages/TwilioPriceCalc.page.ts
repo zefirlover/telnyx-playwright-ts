@@ -32,11 +32,11 @@ export class TwilioPriceCalcPage extends BasePage {
         super(page);
         this.page = page;
         this.continueButtonByText = page.locator('//button[text()="Continue"]');
-        this.messagingApiPlate = page.locator('[class="sc-a87e7459-1 gFVaeZ"]').nth(0);
+        this.messagingApiPlate = page.locator('//*[text()="Messaging API"]/parent::div');
         this.continueButton = page.locator('main *> button:not([aria-label])');
         this.submitButton = page.locator('button[type="submit"]');
-        this.inputsList = page.locator('[class="sc-a87e7459-0 fkuRxe"]');
-        this.yourSavingsText = page.locator('[class="Text-sc-5o8owa-0 sc-c7d3cfaa-1 gBsjXt fdlLDD"]');
+        this.inputsList = page.locator('//*[text()="Messaging API"]/parent::div/parent::div');
+        this.yourSavingsText = page.locator('[class*="Text-sc-5o8owa-0 sc-c7d3cfaa-1"]');
         this.sendSmsInput = page.locator('#send-sms');
         this.receiveSmsInput = page.locator('#receive-sms');
         this.sendMmsInput = page.locator('#send-mms');

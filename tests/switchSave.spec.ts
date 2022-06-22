@@ -11,6 +11,7 @@ test.describe('switch + save form testing', () => {
         await mainPage.visit();
         await mainPage.checkCookiesMessageBox();
         await switchSavePage.divScrollTo.scrollIntoViewIfNeeded();
+        await page.waitForSelector('main *> div > span > span');
     });
 
     test('TNP-43 Verify the Switch + Save form is displayed', async ({ page }) => {

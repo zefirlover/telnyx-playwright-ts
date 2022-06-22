@@ -72,10 +72,9 @@ test.describe('sign up page testing', () => {
         let signUpPage = new SignUpPage(page);
         await expect(signUpPage.passwordInput).toBeVisible();
         await expect(signUpPage.passwordInput).toHaveAttribute('type', 'password');
+        await expect(signUpPage.showPasswordButton).toBeVisible();
         await signUpPage.clickShowPasswordButton();
         await expect(signUpPage.passwordInput).toHaveAttribute('type', 'text');
-        await signUpPage.clickShowPasswordButton();
-        await expect(signUpPage.passwordInput).toHaveAttribute('type', 'password');
     })
 
     test('TNP-24 Test the password validation on the Sign Up page with incorrect data', async ({ page }) => {
