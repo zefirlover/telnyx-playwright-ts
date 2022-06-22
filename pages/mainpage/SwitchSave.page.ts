@@ -16,6 +16,7 @@ export class SwitchSavePage extends BasePage {
     readonly programmableVoiceNoRadio: Locator;
     readonly programmableVoiceYesRadio: Locator;
     readonly smsButton: Locator;
+    readonly outboundSlider: Locator;
 
     constructor(page: Page) {
         super(page);
@@ -33,6 +34,7 @@ export class SwitchSavePage extends BasePage {
         this.programmableVoiceNoRadio = page.locator('//span[text()="No"]/parent::div');
         this.programmableVoiceYesRadio = page.locator('//span[text()="Yes"]/parent::div');
         this.smsButton = page.locator('//button[text()="SMS"]');
+        this.outboundSlider = page.locator('//*[text()="Make outbound calls"]/parent::div').locator('.ant-slider-step');
     }
 
     async radioLocator(spanText: string) {
@@ -58,6 +60,25 @@ export class SwitchSavePage extends BasePage {
         let telnyxPrice2 = Number(telnyxString2.replace(/\$/gi, ""));
         if(telnyxPrice1 <= telnyxPrice2) {
             throw new Error('lessSavings number cannot be bigger or equal to moreSavings number');
+        }
+    }
+
+    async checkSlider(sliderName: string) {
+        let box = await this.page.locator(`//*[text()="${sliderName}"]/parent::div`).locator('.ant-slider-step').boundingBox();
+        if (box == null) {
+            throw new Error('"box" is null. Possibly, element is not visible');
+        }
+        await this.page.mouse.click(box.x + 0 * box.width / 4, box.y + box.height / 2);
+        for (let i = 1; i < 3; i++)
+        {
+            let twilioString1 = (await this.twilioPrice.innerText()).replace(/,/gi, "");
+            let twilioPrice1 = Number(twilioString1.replace(/\$/gi, ""));
+            await this.page.mouse.click(box.x + i * box.width / 4, box.y + box.height / 2);
+            let twilioString2 = (await this.twilioPrice.innerText()).replace(/,/gi, "");
+            let twilioPrice2 = Number(twilioString2.replace(/\$/gi, ""));
+            if(twilioPrice1 >= twilioPrice2) {
+                throw new Error('lessSavings number cannot be bigger or equal to moreSavings number');
+            }
         }
     }
 }

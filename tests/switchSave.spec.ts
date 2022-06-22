@@ -43,7 +43,7 @@ test.describe('switch + save form testing', () => {
         await expect(contactUsPage.salesMailtoLink).toBeVisible();
     });
 
-    test('TNP-47 Verify all the radios works on Switch + Save form', async ({ page }) => {
+    test('TNP-47 Verify all radios works on Switch + Save form', async ({ page }) => {
         let switchSavePage = new SwitchSavePage(page);
         await switchSavePage.checkRadioDecrease('Toll-free numbers');
         await switchSavePage.checkRadioIncrease('Local numbers');
@@ -52,5 +52,14 @@ test.describe('switch + save form testing', () => {
         await switchSavePage.smsButton.click();
         await switchSavePage.checkRadioIncrease('Toll-free numbers');
         await switchSavePage.checkRadioDecrease('Local numbers');
+    });
+
+    test('TNP-48 Verify all sliders works on Switch + Save form', async ({ page }) => {
+        let switchSavePage = new SwitchSavePage(page);
+        await switchSavePage.checkSlider('Make outbound calls');
+        await switchSavePage.checkSlider('Receive inbound calls');
+        await switchSavePage.smsButton.click();
+        await switchSavePage.checkSlider('Send messages');
+        await switchSavePage.checkSlider('Receive messages');
     })
 })
