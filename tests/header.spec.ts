@@ -1,5 +1,4 @@
 import { test, expect } from '@playwright/test';
-import { MainPage } from '../pages/mainpage/Main.page';
 import { Header } from '../pages/mainpage/Header.page';
 const arrNavBarElements = [ 'Products', 'Solutions', 'Resources', 'Company', 'Pricing' ]
 const arrProducts1 = [
@@ -19,9 +18,9 @@ const arrProducts3 = [
 
 test.describe('header testing', () => {
     test.beforeEach(async ({ page }) => {
-        let mainPage = new MainPage(page);
-        await mainPage.visit();
-        await mainPage.checkCookiesMessageBox();
+        let header = new Header(page);
+        await header.visit();
+        await header.checkCookiesMessageBox();
     });
 
     test('TNP-02 Verify the header hovers', async ({ page }) => {

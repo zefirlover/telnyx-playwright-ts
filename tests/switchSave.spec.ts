@@ -1,15 +1,13 @@
 import { test, expect } from '@playwright/test';
-import { MainPage } from '../pages/mainpage/Main.page';
 import { SwitchSavePage } from '../pages/mainpage/SwitchSave.page';
 import { SignUpPage } from '../../telnyx-playwright-ts/pages/SignUp.page';
 import { ContactUsPage } from '../../telnyx-playwright-ts/pages/ContactUs.page';
 
 test.describe('switch + save form testing', () => {
     test.beforeEach(async ({ page }) => {
-        let mainPage = new MainPage(page);
         let switchSavePage = new SwitchSavePage(page);
-        await mainPage.visit();
-        await mainPage.checkCookiesMessageBox();
+        await switchSavePage.visit();
+        await switchSavePage.checkCookiesMessageBox();
         await switchSavePage.divScrollTo.scrollIntoViewIfNeeded();
         await page.waitForSelector('main *> div > span > span');
     });

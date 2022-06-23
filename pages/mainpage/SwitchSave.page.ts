@@ -1,7 +1,7 @@
 import { Page, Locator } from '@playwright/test';
-import { BasePage } from '../Base.page';
+import { MainPage } from './Main.page';
 
-export class SwitchSavePage extends BasePage {
+export class SwitchSavePage extends MainPage {
     readonly page: Page;
     readonly buttonSms: Locator;
     readonly divScrollTo: Locator;
@@ -38,7 +38,7 @@ export class SwitchSavePage extends BasePage {
     }
 
     async radioLocator(spanText: string) {
-        await this.page.locator(`//span[text()="${spanText}"]/parent::div`);
+        this.page.locator(`//span[text()="${spanText}"]/parent::div`);
     }
 
     async checkRadioIncrease(radioText: string) {

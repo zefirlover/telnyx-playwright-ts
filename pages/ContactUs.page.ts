@@ -10,4 +10,8 @@ export class ContactUsPage extends BasePage {
         this.page = page;
         this.salesMailtoLink = page.locator('a[href="mailto:sales@telnyx.com"]');
     }
+
+    async visit() {
+        await this.page.goto('https://telnyx.com/contact-us');
+    }
 }
