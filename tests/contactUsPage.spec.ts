@@ -1,6 +1,7 @@
 import { test, expect } from '@playwright/test';
 import { ContactUsPage } from '../pages/ContactUs.page';
 import { Header } from '../pages/mainpage/Header.page';
+import Helpers from '../helpers/helper';
 
 test.describe('contact us page testing', () => {
     test.beforeEach(async ({ page }) => {
@@ -15,5 +16,12 @@ test.describe('contact us page testing', () => {
         await header.visit();
         await header.contactUsLink.click();
         await expect(contactUsPage.salesMailtoLink).toBeVisible();
-    })
+    });
+
+    test('TNP-50 Verify all errors works on the contact us page', async ({ page }) => {
+        let contactUsPage = new ContactUsPage(page);
+        await contactUsPage.submitButton.click();
+        await expect(contactUsPage.reasonError).toBeVisible();
+        await contactUsPage.verifyInputErrorsAre5();
+    });
 })
