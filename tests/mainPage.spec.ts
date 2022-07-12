@@ -7,7 +7,7 @@ const arrProducts = [
     { id: 1, link: 'video', checkText: 'integrated video solution' },
     { id: 2, link: 'iot-sim-card', checkText: 'IoT SIM Cards' },
     { id: 3, link: 'voice-api', checkText: 'Voice API' },
-    { id: 4, link: 'sip-trunks', checkText: 'SIP Trunks' },
+    { id: 4, link: 'sip-trunks', checkText: 'SIP Trunking' },
     { id: 5, link: 'storage', checkText: 'cloud storage' }
 ];
 const arrIncorrectEmails = [ 'testAtgmail.com', '@gmail' ]

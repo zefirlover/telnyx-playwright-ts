@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 import { Header } from '../pages/mainpage/Header.page';
 const arrNavBarElements = [ 'Products', 'Solutions', 'Resources', 'Company', 'Pricing' ]
 const arrProducts = [
-    { id: 0, link: 'sip-trunks', checkText: 'SIP Trunks' },
+    { id: 0, link: 'sip-trunks', checkText: 'SIP Trunking' },
     { id: 1, link: 'voice-api', checkText: 'Voice API' },
     { id: 2, link: 'sms-api', checkText: 'Send and receive texts' },
     { id: 3, link: 'iot-sim-card', checkText: 'IoT SIM Cards' },
